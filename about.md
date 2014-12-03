@@ -1,11 +1,12 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<p class="message">
+  Hey there! This is a personal website of Andrey Kuzmenko. Opinions expressed here do not represent in any way those of my current or past employers. 
+</p>
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I am an applied mathematician, software engineer, quantitative analyst, experienced with- and interested in Machine Learning (ML), especially Probabilistic Graphical Models (PGM) and Bayesian Inference and Learning. I can program in any language. I currently actively use Scala, Java, Python, and C++. I am experimenting with Apache Spark, it's awesome! My favourite application areas are natural language processing (NLP) and quantitative finance (QF), among others.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Thanks for reading!
