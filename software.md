@@ -5,7 +5,7 @@ date: 2001-01-01
 ---
 
 <p class="message">
-You can find all my public code at <a href="{{ site.github }}"><i class="fa fa-github"></i> github/akuz</a><br />
+You can find all my public code at <a href="{{ site.github }}"><i class="fa fa-github"></i>&nbsp;github/akuz</a><br />
 Below are just some things I wanted to highlight
 </p>
 
@@ -20,7 +20,7 @@ The main code you would probably want to look at is optimised LDA Gibbs sampling
 
 ### Download Source Code
 
-* <a href="{{ site.github }}/akuz-java"><i class="fa fa-github"></i> akuz-java</a> - various Java libraries, including:
+* <a href="{{ site.github }}/akuz-java"><i class="fa fa-github"></i>&nbsp;akuz-java</a> - various Java libraries, including:
  * `akuz-nlp` - Natural Language Processing (NLP) library
  * `akuz-nlp-run-lda` - How to run LDA Gibbs sampling
 
@@ -28,8 +28,8 @@ The main code you would probably want to look at is optimised LDA Gibbs sampling
 
 The below zip files contain abstracts (or full texts, depending on the source) of news articles. Close duplicates from the same source have been removed. The data does not have source names or timestamps. First line in each file is a title.
 
-* <a href="{{ site.baseurl }}resources/data/news_1k.zip"><i class="fa fa-file-zip-o"></i> news_1k.zip</a> (416 Kb) — first 1,000 news after 1 Jan 2013, 00:00:00
-* <a href="{{ site.baseurl }}resources/data/news_10k.zip"><i class="fa fa-file-zip-o"></i> news_10k.zip</a> (4.3 Mb) — first 10,000 news after 1 Jan 2013, 00:00:00
+* <a href="{{ site.baseurl }}resources/data/news_1k.zip"><i class="fa fa-file-zip-o"></i>&nbsp;news_1k.zip</a> (416 Kb) — first 1,000 news after 1 Jan 2013, 00:00:00
+* <a href="{{ site.baseurl }}resources/data/news_10k.zip"><i class="fa fa-file-zip-o"></i>&nbsp;news_10k.zip</a> (4.3 Mb) — first 10,000 news after 1 Jan 2013, 00:00:00
 
 To use this data with algorithms from the NLP library, unpack the archive into a directory on your computer, and then specify that directory in the parameters to the program (see `akuz-nlp-run-lda` project for an example).
 
