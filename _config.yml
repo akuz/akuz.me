@@ -9,7 +9,6 @@ relative_permalinks: true
 # Setup
 title:            'akuz~' 
 tagline:          'machine learning hacker'
-description:      'another machine learning hacker''s homepage.'
 url:              http://akuz.me
 baseurl:          /
 

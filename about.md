@@ -14,10 +14,10 @@ Thanks for reading!
 
 ## Contact me
 
-Github: <a href="http://github.com/akuz">github/akuz</a>
+<i class="fa fa-github"></i> &nbsp; <a href="http://github.com/akuz">github/akuz</a>
 
-LinkedIn: <a href="http://www.linkedin.com/in/andreykuzmenko">andreykuzmenko</a>
+<i class="fa fa-linkedin"></i> &nbsp; <a href="http://www.linkedin.com/in/andreykuzmenko">andreykuzmenko</a>
 
-Email address: <a href="mailto:for.akuz@gmail.com">for.akuz@gmail.com</a>
+<i class="fa fa-envelope"></i> &nbsp; <a href="mailto:for.akuz@gmail.com">for.akuz@gmail.com</a>
 
-Twitter: <a href="http://twitter.com/akuz_me">@akuz_me</a> (not really often there)
+<i class="fa fa-twitter"></i> &nbsp; <a href="http://twitter.com/akuz_me">akuz_me</a> (not really often there)
