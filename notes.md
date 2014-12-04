@@ -11,8 +11,8 @@ since I could not find these topics clearly
 covered in open publications.
 </p>
 
-<a href="/resources/pdf/akuz_popt_cost.pdf">Portfolio Optimization with Trading Cost</a><br />
+<a href="/resources/pdf/akuz_popt_cost.pdf"><i class="fa fa-file-pdf-o"></i>&nbsp; Portfolio Optimization with Trading Cost</a><br />
 Andrey Kuzmenko, 9 March 2014, Research Note.
 
-<a href="/resources/pdf/akuz_lda_asym.pdf">Gibbs Sampling for LDA with Asymmetric Dirichlet Priors</a><br />
+<a href="/resources/pdf/akuz_lda_asym.pdf"><i class="fa fa-file-pdf-o"></i>&nbsp; Gibbs Sampling for LDA with Asymmetric Dirichlet Priors</a><br />
 Andrey Kuzmenko, 1 July 2011, Research Note.
