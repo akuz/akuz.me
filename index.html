@@ -14,7 +14,17 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+{% if post.content contains '<!--more-->' %}
+  {{ post.content | split:'<!--more-->' | first }}
+  <p>
+    <a href="{{ post.url }}">
+      Read full article <i class="fa fa-angle-double-right"></i>
+    </a>
+  </p>
+{% else %}
+  {{ post.content }}
+{% endif %}
+
   </div>
   {% endfor %}
 </div>
