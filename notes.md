@@ -7,7 +7,7 @@ date: 2002-01-01
 <p class="message">
 Below you can find some of my unpublished notes,
 which I thought would be worth posting here,
-because I could not find these topics clearly
+since I could not find these topics clearly
 covered in open publications.
 </p>
 

@@ -20,16 +20,16 @@ The main code you would probably want to look at is optimised LDA Gibbs sampling
 
 ### Download Source Code
 
-* <a href="{{ site.github }}/akuz-java">`akuz-java`</a> - various Java libraries, including:
- * <a href="{{ site.github }}/akuz-java/akuz-nlp">`akuz-nlp`</a> - Natural Language Processing (NLP) library
- * <a href="{{ site.github }}/akuz-java/akuz-nlp-run-lda">`akuz-nlp-run-lda`</a> - How to run LDA Gibbs sampling
+* <a href="{{ site.github }}/akuz-java">akuz-java</a> - various Java libraries, including:
+ * `akuz-nlp` - Natural Language Processing (NLP) library
+ * `akuz-nlp-run-lda` - How to run LDA Gibbs sampling
 
 ### Download Test Data
 
 The below zip files contain abstracts (or full texts, depending on the source) of news articles. Close duplicates from the same source have been removed. The data does not have source names or timestamps. First line in each file is a title.
 
-* <a href="{{ site.baseurl }}resources/data/news_1k.zip">`news_1k`</a> (416 Kb) — first 1,000 news after 1 Jan 2013, 00:00:00
-* <a href="{{ site.baseurl }}resources/data/news_10k.zip">`news_10k`</a> (4.3 Mb) — first 10,000 news after 1 Jan 2013, 00:00:00
+* <a href="{{ site.baseurl }}resources/data/news_1k.zip">news_1k</a> (416 Kb) — first 1,000 news after 1 Jan 2013, 00:00:00
+* <a href="{{ site.baseurl }}resources/data/news_10k.zip">news_10k</a> (4.3 Mb) — first 10,000 news after 1 Jan 2013, 00:00:00
 
-To use this data with algorithms from the NLP library, unpack the archive into a directory on your computer, and then specify that directory in the parameters to the program (see link to example in the source code above).
+To use this data with algorithms from the NLP library, unpack the archive into a directory on your computer, and then specify that directory in the parameters to the program (see `akuz-nlp-run-lda` project for an example).
 
