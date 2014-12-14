@@ -1,16 +1,13 @@
 ---
 layout: page
 title: Software
-date: 2001-01-01
+date: 2002-01-01
 ---
 
 <p class="message">
-You can find all my public code at <a href="{{ site.github }}"><i class="fa fa-github"></i>&nbsp;github/akuz</a><br />
+You can find all my public code at <a href="{{ site.github }}"><i class="fa fa-github"></i>&nbsp;github.com/akuz</a><br />
 Below are just some things I wanted to highlight
 </p>
-
-
-## Optimised LDA Gibbs Sampling
 
 The main code you would probably want to look at is optimised LDA Gibbs sampling in the `akuz-nlp` library, which includes the following enhancements over the standard implementations:
 

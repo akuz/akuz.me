@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Open notes
-date: 2002-01-01
+title: PDF notes
+date: 2001-01-01
 ---
 
 <p class="message">
