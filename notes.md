@@ -14,5 +14,8 @@ covered in open publications.
 <a href="/resources/pdf/akuz_popt_cost.pdf"><i class="fa fa-file-pdf-o"></i>&nbsp; Portfolio Optimization with Trading Cost</a><br />
 Andrey Kuzmenko, 9 March 2014, Research Note.
 
+<a href="/resources/pdf/akuz_sim_ann_lda.pdf"><i class="fa fa-file-pdf-o"></i>&nbsp; Simulated Annealing for Dirichlet Priors in LDA</a><br />
+Andrey Kuzmenko, 25 January 2014, Research Note.
+
 <a href="/resources/pdf/akuz_lda_asym.pdf"><i class="fa fa-file-pdf-o"></i>&nbsp; Gibbs Sampling for LDA with Asymmetric Dirichlet Priors</a><br />
 Andrey Kuzmenko, 1 July 2011, Research Note.
