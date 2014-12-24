@@ -9,6 +9,8 @@ Imagine you have a dataset of objects that you can broadly classify as "plain br
 
 <img src="{{ site.baseurl}}resources/images/Bread_Data.png" />
 
+<!--more-->
+
 With the document clustering approach, if you had a model that would need to group these objects into 2 clusters, then you would end up with the following results:
 
 <img src="{{ site.baseurl}}resources/images/Bread_Cluster.png" />
