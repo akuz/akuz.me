@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Just titles
+title: All titles
 date: 2000-01-01
 ---
 
