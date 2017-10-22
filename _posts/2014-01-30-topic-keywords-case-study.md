@@ -30,7 +30,7 @@ burn in to infer the topics.
 
 The details of the configuration parameters are provided in the
 `README` file of the of `akuz-java-nlp-run-lda` package from the
-`akuz-java` library. Please see <a href="{{ site.baseurl}}software">software</a>
+`akuz-java` library. Please see <a href="{{ site.baseurl}}/software">software</a>
 page for more details.
 
 First, we run `akuz-java-nlp-run-lda.sh` with the following topics config:
@@ -158,7 +158,7 @@ Let us now have a look at some of the other topics:
 </pre>
 
 You can see the complete list of topics
-<a href="{{ site.baseurl}}resources/txt/topics_1.txt">here</a>.
+<a href="{{ site.baseurl}}/resources/txt/topics_1.txt">here</a>.
 
 We can now see that we would perhaps with to detect some of these
 topics in the future articles, so we need to infer more relevant
@@ -360,7 +360,7 @@ Here are the first few topics from this run:
 </pre>
 
 You can see the complete list of topics
-<a href="{{ site.baseurl}}resources/txt/topics_2.txt">here</a>.
+<a href="{{ site.baseurl}}/resources/txt/topics_2.txt">here</a>.
 
 First, you might find it interesting that the inference has brought
 up additional high-probability words into the us_gov and protests
@@ -600,7 +600,7 @@ Here are some of the topics inferred using this configuration:
 </pre>
 
 You can see the complete list of topics
-<a href="{{ site.baseurl}}resources/txt/topics_3.txt">here</a>.
+<a href="{{ site.baseurl}}/resources/txt/topics_3.txt">here</a>.
 
 We can detect the following issues now:
 
@@ -963,7 +963,7 @@ Here are the inferred topics for our configuration:
 </pre>
 
 You can see the complete list of topics
-<a href="{{ site.baseurl}}resources/txt/topics_4.txt">here</a>.
+<a href="{{ site.baseurl}}/resources/txt/topics_4.txt">here</a>.
 
 As you can see, we now obtain topics that are very relevant to
 the keywords that we specified. By providing the keywords, we
