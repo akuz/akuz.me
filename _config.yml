@@ -11,12 +11,9 @@ tagline:             "machine learning, artificial intelligence, and what not"
 description:         "Another machine learning hacker's homepage &nbsp;<i class='fa fa-cube'></i>"
 url:                 http://akuz.me
 baseurl:             ""
-paginate:            50
+paginate:            10
 
 # About/contact
 author:
   name:              Andrey Kuzmenko
   email:             for.akuz@gmail.com
-
-# Custom vars
-version:             1.0.0
