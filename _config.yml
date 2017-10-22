@@ -1,24 +1,22 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
 # Permalinks
-permalink:        pretty
-relative_permalinks: true
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: false
+plugins:            [jekyll-paginate]
 
 # Setup
-title:            'akuz~' 
-tagline:          'machine learning hacker'
-url:              http://akuz.me
-baseurl:          /
+title:               akuz.me/nko
+tagline:             "machine learning, artificial intelligence, and what not"
+description:         "Another machine learning hacker's homepage &nbsp;<i class='fa fa-cube'></i>"
+url:                 http://akuz.me
+baseurl:             ""
+paginate:            50
 
+# About/contact
 author:
-  name:           'Andrey Kuzmenko'
-  url:            https://twitter.com/akuz_me
-
-paginate:         5
+  name:              Andrey Kuzmenko
+  email:             for.akuz@gmail.com
 
 # Custom vars
-version:          2.1.0
-
-github:           https://github.com/akuz
+version:             1.0.0

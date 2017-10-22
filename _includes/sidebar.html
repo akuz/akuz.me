@@ -1,34 +1,41 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
-      </h1>
-      <p class="lead">another machine learning hacker's homepage</p>
-    </div>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Blog</a>
 
-      {% assign pages_list = site.pages | sort:"date" %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    {% assign pages_list = site.pages | sort:"date" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
         {% endif %}
-      {% endfor %}
+      {% endif %}
+    {% endfor %}
 
-    </nav>
+  </nav>
 
-    <!--p>&copy; {{ site.time | date: '%Y' }}. All rights reserved</p-->
-    <p>Built with <a href="https://github.com/poole/hyde">Hyde</a> for <a href="http://jekyllrb.com/">Jekyll</a> and icons from <a href="http://fortawesome.github.io/Font-Awesome/"><i class="fa fa-flag"></i>&nbsp;Font&nbsp;Awesome</a></p>
+  <div class="sidebar-item">
+    <p>
+      <i class="fa fa-copyright"></i> {{ site.time | date: '%Y' }}, Andrey Kuzmenko
+    </p>
+    <p>
+      Powered by:<br />
+      <a href="https://jekyllrb.com/"><i class="fa fa-cog"></i>&nbsp;Jekyll</a> &amp; <a href="http://lanyon.getpoole.com/">Lanyon</a><br />
+      <a href="http://fontawesome.io/"><i class="fa fa-font-awesome"></i>&nbsp;Font&nbsp;Awesome</a><br />
+      <a href="https://pages.github.com/"><i class="fa fa-github"></i>&nbsp;Github&nbsp;Pages</a><br />
+    </p>
   </div>
 </div>
