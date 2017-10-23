@@ -9,7 +9,7 @@ fixed target values (usually small), then we reduce the mixing of
 the samples from the target distribution from the beginning,
 even though we haven't found a good approximation yet.
 
-<img src="{{ site.baseurl }}/resources/images/SimAnn2.png" alt="SimAnn2"
+<img src="{{ site.baseurl }}/media/img/SimAnn2.png" alt="SimAnn2"
 width="300" height="50" />
 
 <!--more-->
@@ -25,4 +25,4 @@ MCMC inference of multinomial random distributions with Dirichlet priors in LDA.
 It is implemented in my NLP library for optimised Gibbs sampling for LDA
 (see <a href="{{ site.baseurl }}/software">software</a>).
 The full article can be <a
-href="{{ site.baseurl }}/resources/pdf/akuz_sim_ann_lda.pdf">found here</a> (PDF).
+href="{{ site.baseurl }}/media/pdf/akuz_sim_ann_lda.pdf">found here</a> (PDF).

@@ -24,4 +24,4 @@ formulae apply for the model with asymmetric priors?
 
 For this purpose, I've repeated the derivation of the
 Gibbs sampling formulae for the case of the asymmetric
-priors in LDA. The paper can be <a href="{{ site.baseurl }}/resources/pdf/akuz_lda_asym.pdf">found here</a> (PDF).
+priors in LDA. The paper can be <a href="{{ site.baseurl }}/media/pdf/akuz_lda_asym.pdf">found here</a> (PDF).
