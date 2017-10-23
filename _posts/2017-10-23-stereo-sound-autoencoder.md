@@ -56,8 +56,10 @@ be fixed with a simple adjustment).
 Finally, the above gif shows that the aproximation is not very good
 with very high frequencies. Of course, this is because there are only
 64 features, and moreover each of them has a field of view of 8 audio
-samples. It is an interesting question whether these should be learnt
-at the expence of more features, or possibly, a special "noise"
+samples (which is quite wide). 
+It is an interesting question whether the higher frequencies 
+should be approximated
+at the expense of having more features, or possibly, a special "noise"
 feature could be added.
 
 You can find a Jupyter Notebook with my code
