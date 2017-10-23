@@ -7,7 +7,7 @@ I've decided to test a small (not very deep) autoencoder on the audio data.
 It has two convolutional layers, with convolutions of size 4 and strides of 2,
 with ReLU nonlinearities. This results in 1/4 frame rate of the original audio.
 
-<img src="{{ site.baseurl}}/media/img/StereoAutoencoder.png" style="margin-left: 50px" />
+<img src="{{ site.baseurl}}/media/img/StereoAutoencoder.png" />
 
 The corresponding deconvolutions are then applied.
 The network is trained using the Adam algorithm using batches of 100 audio
