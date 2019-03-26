@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Release 0-0-1 | akuz.me/nko
+</title>
+  <link rel="canonical" href="http://akuz.me/release-0-0-1.html">
+
+
+  <link rel="stylesheet" href="http://akuz.me/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="http://akuz.me/feeds/all.atom.xml">
+  
+  <meta name="description" content="The first version of the Java source code for running the heavily optimised LDA Gibbs sampling has been released. Please see the software page for details. Below you can see the 20 topics output produced from 10,000 news articles, after running just 200 iterations. First 100 iterations are burn-in …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-47495265-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="http://akuz.me/">akuz.me/nko</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/">Home</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/software.html">Software</a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Release 0-0-1
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2014-01-26T00:00:00+00:00">
+          <i class="fa fa-clock-o"></i>
+          Sun 26 January 2014
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="http://akuz.me/category/software.html">Software</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="http://akuz.me/author/akuz.html">akuz</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>The first version of the Java source code for running the heavily optimised LDA Gibbs sampling has been released. Please see the <a href="http://akuz.me/pages/software.html">software</a> page for details.</p>
+<p>Below you can see the 20 topics output produced from <strong>10,000 news articles</strong>, after running just 200 iterations. First 100 iterations are burn-in with temperature from 1.0 to 0.1, and then 100 sampling iterations at temperature 0.1. It was completed in <strong>15 seconds</strong> on a 4-core machine.</p>
+<div class="highlight"><pre><span></span>*******************************************************************
+                      TOTAL TOPICS COUNT: 21
+*******************************************************************
+
+
+-------------------------------------------------------------------
+#: 0001  P: .2212    noise
+-------------------------------------------------------------------
+
+.0062 people     .0053 work       .0041 story      .0034 long
+.0032 good       .0032 think      .0029 start      .0029 made
+.0027 right      .0027 find       .0027 change     .0026 very
+.0024 help       .0023 life       .0023 best       .0022 place
+.0021 turned     .0021 article    .0021 part       .0020 might
+.0019 watch      .0019 run        .0019 better     .0018 question
+.0017 job        .0017 called     .0017 home       .0017 success
+.0017 ago        .0016 past       .0016 different  .0016 less
+.0016 believe    .0016 problem    .0016 great      .0016 business
+.0016 book       .0015 money      .0015 person     .0015 big
+.0015 means      .0015 hand       .0015 let        .0015 each
+.0014 building   .0014 actually   .0014 little     .0014 old
+.0014 lot        .0014 reason     .0014 something  .0014 study
+.0014 american   .0014 age        .0014 trying     .0013 never
+.0013 without    .0013 open       .0013 general    .0013 hours
+.0013 conversati .0013 power      .0013 feel       .0013 important
+.0013 enough     .0013 almost     .0013 name       .0013 fact
+.0013 continue   .0013 created    .0013 view       .0013 same
+.0012 often      .0012 tell       .0012 point      .0012 hard
+.0012 explains   .0012 known      .0012 effect     .0012 family
+.0012 brand      .0012 high       .0012 history    .0012 number
+.0012 head       .0011 bad        .0011 bring      .0011 food
+.0011 hope       .0011 play       .0011 future     .0011 idea
+.0011 project    .0011 course     .0011 designed   .0011 keep
+.0011 critical   .0011 clear      .0011 told       .0011 review
+
+
+
+-------------------------------------------------------------------
+#: 0002  P: .0287    topic1
+-------------------------------------------------------------------
+
+.0272 facebook   .0196 social     .0167 ad         .0163 twitter
+.0156 media      .0117 post       .0097 network    .0089 former
+.0078 content    .0077 app        .0076 updates    .0072 users
+.0069 advertisin .0063 3d         .0062 candy      .0061 mcdonnell
+.0061 lee        .0059 game       .0059 leaving    .0058 jones
+.0057 virginia   .0057 company    .0056 wife       .0055 charges
+.0054 printing   .0053 page       .0053 message    .0052 big
+.0051 ceo        .0051 tweeted    .0049 bob        .0048 digital
+.0048 house      .0048 brother    .0047 brand      .0046 published
+.0046 test       .0045 fan        .0045 developmen .0044 dave
+.0041 gifts      .0040 mobile     .0040 netflix    .0039 celebrity
+.0039 accepting  .0038 text       .0036 popular    .0036 share
+.0035 daily      .0035 crush      .0035 travis     .0034 newspaper
+.0034 video      .0033 indicted   .0033 word       .0033 journalist
+.0033 comments   .0033 king       .0032 trademark  .0032 business
+.0032 editor     .0031 governor   .0031 dow        .0031 status
+.0031 founder    .0030 windows    .0030 friends    .0030 team
+.0028 maker      .0027 photo      .0027 corruption .0027 website
+.0027 isle       .0026 telegraph  .0025 based      .0025 williams
+.0024 creator    .0024 saga       .0024 gov        .0024 site
+.0024 behind     .0023 federal    .0023 engagement .0023 summary
+.0023 instagram  .0023 corp       .0023 illegally  .0023 paper
+.0023 washington .0023 fenwick    .0022 strategy   .0022 trove
+.0022 campaign   .0020 send       .0020 institutio .0020 reed
+.0020 gallagher  .0020 york       .0019 name       .0019 flavor
+
+
+
+-------------------------------------------------------------------
+#: 0003  P: .0269    topic2
+-------------------------------------------------------------------
+
+.0413 china      .0196 chinese    .0096 report     .0090 group
+.0083 japan      .0068 home       .0067 million    .0065 trial
+.0063 country    .0062 island     .0059 activist   .0058 public
+.0058 officials  .0058 beijing    .0054 offshore   .0054 british
+.0053 greece     .0049 guardian   .0049 japanese   .0045 offering
+.0045 air        .0044 dolphins   .0044 reuters    .0042 house
+.0040 london     .0040 agency     .0039 hunt       .0037 abe
+.0035 pollution  .0035 internatio .0035 help       .0035 media
+.0034 order      .0034 sea        .0034 human      .0033 travel
+.0033 wealth     .0033 block      .0032 leaders    .0032 leading
+.0032 greek      .0031 whales     .0031 auction    .0031 sale
+.0030 investigat .0029 biggest    .0028 united     .0028 property
+.0028 boat       .0027 hold       .0027 stake      .0027 companies
+.0026 animal     .0026 xu         .0025 corruption .0025 xi
+.0025 tobacco    .0025 rights     .0025 capture    .0025 coast
+.0025 rule       .0025 decades    .0025 citizens   .0025 government
+.0025 asia       .0024 centre     .0024 states     .0024 euros
+.0024 private    .0023 elite      .0023 sold       .0023 documents
+.0023 zhiyong    .0023 close      .0022 party      .0022 plane
+.0022 record     .0022 sharks     .0022 owner      .0022 joint
+.0022 refused    .0022 foreign    .0022 tax        .0021 according
+.0021 prominent  .0021 firm       .0021 western    .0020 contract
+.0020 dog        .0020 president  .0020 anti       .0020 bird
+.0020 amber      .0020 jinping    .0020 response   .0020 havens
+.0019 risk       .0019 pilot      .0019 big        .0018 tokyo
+
+
+
+-------------------------------------------------------------------
+#: 0004  P: .0426    topic3
+-------------------------------------------------------------------
+
+.0601 rating     .0580 report     .0326 research   .0293 analysts
+.0240 shares     .0229 issued     .0188 buy        .0186 price
+.0185 target     .0161 hold       .0160 stock      .0159 group
+.0151 note       .0138 upgraded   .0128 neutral    .0128 investors
+.0123 bank       .0112 europe     .0108 released   .0102 corp
+.0100 cantor     .0100 downgraded .0099 fitzgerald .0096 coverage
+.0093 currently  .0090 plc        .0086 firm       .0083 gbx
+.0076 outperform .0071 reiterated .0069 initiated  .0066 capital
+.0064 equities   .0061 stanley    .0060 morgan     .0058 zacks
+.0058 lowered    .0057 american   .0056 jpmorgan   .0053 market
+.0051 reaffirmed .0051 increased  .0050 securities .0048 published
+.0048 raised     .0048 sell       .0047 network    .0043 inc
+.0040 goldman    .0039 maintains  .0036 sachs      .0036 overweight
+.0036 chase      .0035 internatio .0034 credit     .0034 nyse
+.0034 given      .0031 barclays   .0031 restated   .0030 hilton
+.0030 ltd        .0030 update     .0030 investment .0030 deutsche
+.0029 sent       .0028 worldwide  .0028 suisse     .0027 receives
+.0027 equal      .0026 according  .0026 gold       .0026 clients
+.0026 objective  .0025 perform    .0025 net        .0025 weight
+.0025 davis      .0025 hsbc       .0022 broker     .0022 theflyonth
+.0022 ubs        .0021 nasdaq     .0020 thestreet  .0020 analystrat
+.0019 canaccord  .0018 ned        .0018 cut        .0018 numis
+.0016 snap       .0016 underweigh .0016 rbc        .0016 pt
+.0016 citigroup  .0016 genuity    .0015 investec   .0015 arn
+.0015 lifted     .0014 thomson    .0014 mining     .0013 started
+
+
+
+-------------------------------------------------------------------
+#: 0005  P: .0424    topic4
+-------------------------------------------------------------------
+
+.0153 obama      .0142 state      .0140 president  .0133 olympics
+.0129 european   .0106 eu         .0103 winter     .0099 sochi
+.0094 snow       .0091 christie   .0088 russian    .0085 russia
+.0082 union      .0081 national   .0072 storm      .0068 election
+.0067 governor   .0063 reuters    .0060 political  .0059 climate
+.0058 chris      .0057 commission .0057 plans      .0054 u.s.
+.0054 officials  .0052 reform     .0050 country    .0049 games
+.0048 threat     .0048 jersey     .0048 government .0048 republican
+.0048 party      .0046 house      .0046 weather    .0045 bill
+.0045 committee  .0045 putin      .0045 gov        .0044 vote
+.0043 targets    .0043 washington .0043 power      .0042 change
+.0041 article    .0041 run        .0041 administra .0039 europe
+.0039 city       .0039 cold       .0039 warned     .0037 york
+.0036 cancelled  .0036 proposed   .0036 scandal    .0035 renewable
+.0034 parliament .0034 law        .0034 minister   .0034 moscow
+.0033 leader     .0033 security   .0033 east       .0032 brussels
+.0031 northeast  .0031 legislatio .0031 abortion   .0030 part
+.0030 visit      .0029 term       .0029 right      .0029 barack
+.0029 called     .0028 prime      .0028 across     .0028 poll
+.0028 democrats  .0027 speech     .0026 inaugurati .0026 anti
+.0026 received   .0026 criticism  .0026 presidenti .0025 member
+.0025 fears      .0025 head       .0025 terrorist  .0025 white
+.0025 budget     .0024 senate     .0024 face       .0024 north
+.0024 concerns   .0023 address    .0023 voters     .0023 turkey
+.0022 california .0022 aid        .0022 temperatur .0022 vladimir
+
+
+
+-------------------------------------------------------------------
+#: 0006  P: .0587    topic5
+-------------------------------------------------------------------
+
+.0285 company    .0196 investment .0180 fund       .0155 investors
+.0151 market     .0116 billion    .0115 stock      .0115 business
+.0108 complete   .0107 management .0104 million    .0097 bank
+.0087 deal       .0085 capital    .0081 value      .0074 cash
+.0072 story      .0065 shares     .0065 trading    .0064 offer
+.0063 assets     .0061 based      .0059 buy        .0058 raised
+.0058 financial  .0056 firm       .0056 risk       .0055 price
+.0049 apple      .0047 article    .0046 sell       .0045 return
+.0045 real       .0044 sale       .0044 products   .0044 closed
+.0044 group      .0043 industry   .0043 term       .0043 portfolio
+.0042 equity     .0041 finance    .0041 loans      .0038 holdings
+.0038 small      .0038 cap        .0038 venture    .0038 dividend
+.0037 opportunit .0036 positive   .0036 operations .0036 growth
+.0035 estate     .0035 private    .0034 low        .0033 high
+.0033 large      .0032 ipo        .0031 sector     .0031 etf
+.0030 potential  .0029 property   .0029 yield      .0028 blackberry
+.0028 acquisitio .0028 vmware     .0027 flow       .0027 store
+.0027 reuters    .0026 corporate  .0026 partners   .0026 round
+.0026 initial    .0026 valuation  .0025 interest   .0025 developmen
+.0025 provide    .0025 performanc .0025 big        .0025 sources
+.0024 shareholde .0024 global     .0024 lending    .0023 debt
+.0023 expand     .0023 bond       .0023 security   .0023 major
+.0022 analysis   .0022 retail     .0022 united     .0022 airwatch
+.0021 less       .0021 income     .0021 growing    .0021 credit
+.0020 largest    .0020 money      .0020 seeking    .0020 america
+
+
+
+-------------------------------------------------------------------
+#: 0007  P: .0258    topic6
+-------------------------------------------------------------------
+
+.0154 dividend   .0126 bitcoin    .0105 open       .0101 ship
+.0090 record     .0081 australian .0071 buffett    .0069 billion
+.0068 drug       .0061 water      .0058 approval   .0056 west
+.0056 warren     .0055 chemical   .0052 hotels     .0052 spill
+.0052 travel     .0051 bracket    .0051 ice        .0050 passengers
+.0049 declared   .0048 quarterly  .0047 vegas      .0047 bhp
+.0046 casinos    .0046 australia  .0045 vessel     .0045 test
+.0043 las        .0043 accept     .0043 fda        .0042 northern
+.0041 air        .0041 winning    .0041 industry   .0040 currency
+.0040 federer    .0038 billiton   .0037 oil        .0037 land
+.0037 perfect    .0037 airlines   .0037 rescued    .0035 u.s.
+.0034 rehab      .0032 plc        .0032 coast      .0032 prize
+.0031 station    .0030 dollars    .0030 winner     .0029 murray
+.0029 antarctic  .0029 andreessen .0029 group      .0029 space
+.0028 operations .0028 system     .0028 airport    .0028 paid
+.0028 dry        .0028 toy        .0028 given      .0027 arrived
+.0027 finally    .0027 plans      .0027 maritime   .0027 flight
+.0027 21st       .0027 tournament .0026 virginia   .0026 drinks
+.0025 sea        .0025 grand      .0025 gulf       .0025 port
+.0025 scientists .0024 received   .0024 marc       .0024 ncaa
+.0024 supply     .0024 navy       .0024 bet        .0024 offer
+.0022 wainaina   .0022 reach      .0022 lottery    .0022 madness
+.0022 average    .0022 partners   .0022 based      .0022 payment
+.0021 quicken    .0021 stockholde .0021 berkshire  .0021 shareholde
+.0021 pipeline   .0021 fuel       .0021 clinical   .0021 marine
+
+
+
+-------------------------------------------------------------------
+#: 0008  P: .0420    topic7
+-------------------------------------------------------------------
+
+.0186 star       .0185 film       .0151 awards     .0070 music
+.0068 tv         .0063 television .0062 revealed   .0061 series
+.0056 night      .0053 festival   .0052 movie      .0051 play
+.0048 celebrity  .0048 national   .0046 video      .0045 best
+.0045 sundance   .0044 season     .0044 actor      .0042 love
+.0041 red        .0039 dance      .0039 screen     .0038 girl
+.0037 performanc .0037 oscar      .0036 tour       .0035 bill
+.0034 actress    .0034 watch      .0034 fashion    .0033 fans
+.0033 baby       .0033 hit        .0033 album      .0032 grammy
+.0032 winner     .0032 carpet     .0032 nominated  .0032 hollywood
+.0031 lady       .0031 singer     .0031 city       .0030 episode
+.0030 winning    .0030 london     .0030 picture    .0029 tonight
+.0029 character  .0028 bbc        .0028 director   .0028 documentar
+.0027 angeles    .0027 man        .0027 jennifer   .0026 dress
+.0026 featuring  .0026 stage      .0026 debut      .0026 beauty
+.0025 gates      .0025 drama      .0025 viewers    .0025 michelle
+.0025 voice      .0025 disney     .0025 big        .0025 event
+.0025 break      .0025 band       .0024 park       .0024 sherlock
+.0024 white      .0024 mark       .0024 james      .0024 role
+.0023 miami      .0023 ntas       .0023 art        .0023 present
+.0023 cast       .0023 producer   .0022 artist     .0022 daughter
+.0022 house      .0022 robert     .0022 life       .0022 appeared
+.0022 street     .0021 broadcast  .0021 lawrence   .0020 beatles
+.0020 scene      .0020 comedy     .0020 broadway   .0020 sam
+.0019 join       .0019 young      .0019 pope       .0019 obama
+
+
+
+-------------------------------------------------------------------
+#: 0009  P: .0360    topic8
+-------------------------------------------------------------------
+
+.0233 davos      .0149 economic   .0149 syria      .0143 peace
+.0129 government .0118 minister   .0112 meeting    .0112 syrian
+.0103 leaders    .0100 forum      .0100 secretary  .0092 switzerlan
+.0092 pope       .0084 business   .0078 el         .0073 global
+.0073 chief      .0071 pimco      .0071 political  .0066 erian
+.0066 conference .0058 iran       .0056 country    .0056 francis
+.0055 open       .0054 john       .0054 war        .0054 foreign
+.0052 ban        .0050 discuss    .0048 state      .0047 inequality
+.0047 executive  .0046 called     .0046 issues     .0045 president
+.0043 prime      .0043 geneva     .0042 conflict   .0042 role
+.0041 general    .0041 paul       .0040 mohamed    .0040 step
+.0040 annual     .0039 un         .0039 urged      .0039 attending
+.0038 crisis     .0038 kerry      .0037 cameron    .0037 internatio
+.0036 david      .0035 refugees   .0035 power      .0035 opposition
+.0035 party      .0034 moon       .0034 economy    .0034 gathering
+.0034 invitation .0033 civil      .0032 questions  .0031 resigned
+.0031 head       .0031 wealth     .0030 ceo        .0030 income
+.0029 labour     .0029 bill       .0029 russell    .0029 negotiatio
+.0029 people     .0028 ed         .0028 miliband   .0028 uk
+.0027 hope       .0027 delegates  .0027 diplomatic .0026 swiss
+.0026 reuters    .0025 ki         .0025 united     .0025 begin
+.0025 change     .0024 theresa    .0024 montreux   .0024 britain
+.0024 nations    .0024 leave      .0024 face       .0023 aimed
+.0022 management .0022 future     .0022 challenge  .0022 push
+.0022 u.n.       .0021 poverty    .0021 assad      .0020 investment
+
+
+
+-------------------------------------------------------------------
+#: 0010  P: .0613    topic9
+-------------------------------------------------------------------
+
+.0193 rate       .0158 market     .0156 uk         .0152 energy
+.0146 growth     .0123 bank       .0109 rise       .0098 economy
+.0097 oil        .0089 expected   .0085 economic   .0084 increase
+.0082 prices     .0081 fall       .0080 gas        .0076 unemployme
+.0069 forecast   .0068 global     .0064 appeared   .0059 post
+.0059 low        .0059 interest   .0056 production .0054 magazine
+.0052 cut        .0051 china      .0051 raise      .0051 high
+.0049 ifa        .0048 level      .0046 policy     .0046 cost
+.0045 higher     .0043 figures    .0043 number     .0042 inflation
+.0042 natural    .0041 monetary   .0041 according  .0041 demand
+.0039 central    .0038 data       .0038 britain    .0038 european
+.0037 emerging   .0036 cent       .0036 warned     .0036 survey
+.0036 europe     .0036 dollar     .0036 fund       .0036 drop
+.0035 british    .0035 recovery   .0034 hit        .0034 imf
+.0034 country    .0034 record     .0034 continues  .0032 u.s.
+.0032 national   .0031 jobs       .0031 growing    .0031 england
+.0031 percent    .0029 report     .0029 internatio .0029 london
+.0028 government .0028 fell       .0028 fed        .0028 trading
+.0027 crude      .0027 change     .0027 sector     .0027 gains
+.0027 points     .0026 easing     .0026 trend      .0026 plans
+.0026 concerns   .0025 meeting    .0025 improving  .0025 financial
+.0025 bosses     .0024 industry   .0024 pressure   .0024 outlook
+.0024 strong     .0024 major      .0024 spending   .0024 employment
+.0024 reserve    .0024 ftse       .0024 target     .0023 jobless
+.0023 firm       .0023 boost      .0023 remain     .0023 lower
+
+
+
+-------------------------------------------------------------------
+#: 0011  P: .0471    topic10
+-------------------------------------------------------------------
+
+.0205 police     .0143 man        .0131 court      .0127 death
+.0105 charged    .0099 killed     .0086 murder     .0084 officer
+.0084 abuse      .0079 trial      .0079 woman      .0076 arrested
+.0075 told       .0073 former     .0068 shooting   .0064 accused
+.0063 victim     .0058 children   .0057 mother     .0055 girl
+.0054 case       .0053 died       .0052 black      .0046 texas
+.0046 boy        .0046 executed   .0046 alleged    .0046 women
+.0046 british    .0044 wife       .0044 university .0044 assault
+.0043 sex        .0042 suspect    .0041 face       .0040 home
+.0040 attack     .0040 shot       .0039 men        .0037 against
+.0036 search     .0036 killer     .0036 purdue     .0036 investigat
+.0036 drug       .0036 son        .0035 dead       .0035 jury
+.0035 hospital   .0034 child      .0033 sentenced  .0033 authoritie
+.0032 father     .0032 teenager   .0031 young      .0030 fire
+.0030 mexican    .0030 rape       .0029 jailed     .0029 appeared
+.0028 hears      .0028 heard      .0028 claims     .0027 allegedly
+.0027 dennehy    .0027 roache     .0027 evidence   .0026 reported
+.0026 family     .0026 daughter   .0026 witness    .0025 posing
+.0025 people     .0024 london     .0024 called     .0024 guilty
+.0024 prison     .0024 himself    .0024 chair      .0024 forced
+.0023 convicted  .0023 lucia      .0023 life       .0023 collymore
+.0022 person     .0022 girlfriend .0022 street     .0022 images
+.0022 star       .0021 gun        .0021 custody    .0021 lawyers
+.0021 held       .0021 prosecutor .0020 campus     .0020 defendant
+.0020 south      .0020 justice    .0019 sexual     .0019 picture
+
+
+
+-------------------------------------------------------------------
+#: 0012  P: .0284    topic11
+-------------------------------------------------------------------
+
+.0466 protesters .0264 police     .0178 ukraine    .0152 government
+.0147 kiev       .0142 emergency  .0140 killed     .0106 state
+.0106 clashes    .0103 people     .0092 capital    .0084 violence
+.0080 ukrainian  .0077 pakistan   .0071 minister   .0071 street
+.0068 dead       .0067 anti       .0065 demonstrat .0062 leader
+.0061 india      .0061 declared   .0059 shot       .0057 hit
+.0056 officials  .0056 officers   .0052 bomb       .0050 city
+.0050 thailand   .0049 bangkok    .0046 reports    .0045 opposition
+.0045 against    .0044 riot       .0043 statue     .0042 died
+.0041 delhi      .0041 injured    .0040 mass       .0040 workers
+.0039 laws       .0039 prime      .0038 escalating .0038 intel
+.0037 verizon    .0036 violent    .0036 thai       .0036 video
+.0035 text       .0035 attacks    .0035 head       .0034 president
+.0034 viktor     .0033 spanish    .0033 message    .0033 repair
+.0033 force      .0033 demands    .0032 wounded    .0032 amid
+.0032 tv         .0032 political  .0032 crisis     .0031 authoritie
+.0031 control    .0031 rio        .0030 indian     .0030 damage
+.0029 pro        .0029 hbo        .0029 area       .0028 pakistani
+.0028 sandberg   .0027 christ     .0027 billionair .0026 sent
+.0026 province   .0025 lightning  .0025 death      .0025 told
+.0025 activists  .0025 fears      .0025 deadly     .0025 sheryl
+.0023 central    .0023 movement   .0023 reuters    .0023 bus
+.0023 polio      .0023 guards     .0022 subscriber .0022 power
+.0022 cyclist    .0022 country    .0022 attempt    .0022 imposed
+.0022 pilgrims   .0021 participan .0021 media      .0021 support
+
+
+
+-------------------------------------------------------------------
+#: 0013  P: .0575    topic12
+-------------------------------------------------------------------
+
+.0356 earnings   .0331 shares     .0247 company    .0245 stock
+.0213 quarter    .0175 revenue    .0160 reported   .0148 market
+.0143 sales      .0137 results    .0130 profit     .0116 expected
+.0089 estimate   .0088 billion    .0087 trading    .0080 growth
+.0074 post       .0071 percent    .0070 ibm        .0068 quarterly
+.0067 price      .0067 eps        .0065 update     .0064 beating
+.0064 selling    .0060 corp       .0059 guidance   .0058 million
+.0057 average    .0055 release    .0055 street     .0054 sold
+.0050 analysts   .0049 investors  .0049 continued  .0048 gain
+.0048 insider    .0047 decline    .0046 consensus  .0046 higher
+.0046 open       .0045 q4         .0045 dow        .0044 complete
+.0042 nasdaq     .0042 story      .0040 inc        .0040 gold
+.0038 industry   .0038 compared   .0038 netflix    .0037 wall
+.0037 increase   .0037 johnson    .0036 mixed      .0035 lower
+.0035 transactio .0035 margin     .0034 period     .0033 rise
+.0032 strong     .0032 u.s.       .0032 reuters    .0031 data
+.0031 technology .0030 provided   .0029 drop       .0029 nyse
+.0029 missed     .0028 net        .0028 future     .0028 united
+.0028 high       .0027 performanc .0027 rose       .0026 index
+.0024 retail     .0024 buy        .0024 fell       .0024 issued
+.0024 disappoint .0024 points     .0024 close      .0023 below
+.0023 dated      .0022 season     .0022 amd        .0022 number
+.0022 holiday    .0022 advanced   .0022 coach      .0022 fall
+.0022 fiscal     .0020 surged     .0020 holdings   .0020 financial
+.0020 current    .0019 general    .0019 cents      .0018 past
+
+
+
+-------------------------------------------------------------------
+#: 0014  P: .0328    topic13
+-------------------------------------------------------------------
+
+.0151 war        .0119 attack     .0119 killed     .0113 south
+.0113 syria      .0103 military   .0102 al         .0090 country
+.0089 israel     .0086 government .0085 president  .0074 assad
+.0073 syrian     .0073 security   .0071 forces     .0071 crime
+.0067 terror     .0065 internatio .0065 report     .0063 officials
+.0059 militant   .0059 group      .0057 korea      .0056 north
+.0049 u.s.       .0048 plans      .0048 reuters    .0047 israeli
+.0046 members    .0046 torture    .0046 african    .0045 suspected
+.0043 foreign    .0041 human      .0041 peace      .0040 army
+.0040 evidence   .0038 nation     .0037 bashar     .0037 opposition
+.0036 rights     .0036 bomb       .0035 republic   .0034 regime
+.0033 prison     .0033 troops     .0033 central    .0033 italy
+.0033 afghanista .0032 embassy    .0032 suicide    .0032 fight
+.0032 charges    .0032 armed      .0031 arrested   .0031 accused
+.0031 seized     .0031 police     .0030 released   .0029 rebels
+.0029 qaeda      .0029 targets    .0028 documents  .0027 un
+.0027 islamist   .0026 against    .0026 border     .0026 operation
+.0026 egypt      .0026 heart      .0025 former     .0025 muslim
+.0025 detainees  .0025 strike     .0025 east       .0025 soldiers
+.0025 conflict   .0025 civil      .0024 palestinia .0024 iraq
+.0024 africa     .0024 plot       .0023 russian    .0023 people
+.0023 american   .0023 senior     .0022 sign       .0022 terrorist
+.0022 defense    .0022 sudan      .0021 appear     .0021 related
+.0021 west       .0021 systematic .0021 air        .0021 italian
+.0020 experts    .0020 beirut     .0020 ministry   .0020 cross
+
+
+
+-------------------------------------------------------------------
+#: 0015  P: .0336    topic14
+-------------------------------------------------------------------
+
+.0171 school     .0152 students   .0149 party      .0135 women
+.0131 university .0125 street     .0116 lord       .0096 mp
+.0082 rennard    .0081 education  .0079 sexual     .0077 wall
+.0076 clegg      .0074 college    .0073 gay        .0068 claims
+.0063 campaign   .0062 lib        .0061 dems       .0061 nick
+.0059 sex        .0053 liberal    .0052 tory       .0051 wolf
+.0048 accused    .0047 benefits   .0047 report     .0047 female
+.0046 democrat   .0046 support    .0045 men        .0044 conservati
+.0044 martin     .0043 suspended  .0042 political  .0042 against
+.0041 teacher    .0041 ukip       .0040 hill       .0038 harassment
+.0038 same       .0038 call       .0038 peer       .0037 marriage
+.0037 pay        .0037 lloyds     .0036 action     .0036 legal
+.0035 allegation .0034 post       .0034 row        .0034 scotland
+.0034 former     .0033 britain    .0031 floods     .0031 uk
+.0029 leader     .0029 labour     .0027 election   .0027 state
+.0026 minister   .0026 class      .0026 role       .0025 caused
+.0025 politician .0025 made       .0025 behaviour  .0025 candidate
+.0025 wife       .0024 king       .0024 trump      .0024 resigns
+.0024 burley     .0023 gender     .0023 jonah      .0023 public
+.0023 farage     .0022 hosts      .0022 yale       .0021 mike
+.0021 decision   .0021 black      .0021 controvers .0021 took
+.0021 glasgow    .0021 nazi       .0021 nominated  .0021 activists
+.0020 david      .0020 told       .0020 district   .0020 victims
+.0020 stand      .0019 hancock    .0019 fine       .0019 rector
+.0019 scorsese   .0019 non        .0019 nigel      .0019 appeared
+
+
+
+-------------------------------------------------------------------
+#: 0016  P: .0411    topic15
+-------------------------------------------------------------------
+
+.0186 u.s.       .0168 court      .0121 rules      .0112 law
+.0110 tax        .0105 government .0090 state      .0076 reuters
+.0073 snowden    .0072 workers    .0072 federal    .0071 filed
+.0070 public     .0068 pay        .0064 york       .0063 supreme
+.0062 nsa        .0061 security   .0058 report     .0057 legal
+.0056 protect    .0055 save       .0054 agency     .0053 pension
+.0052 judge      .0051 appeal     .0050 company    .0050 spy
+.0050 case       .0049 union      .0049 national   .0047 program
+.0047 cut        .0046 edward     .0043 fire       .0042 former
+.0040 united     .0040 patent     .0040 documents  .0040 million
+.0040 jobs       .0039 office     .0039 officials  .0039 challenge
+.0038 city       .0038 american   .0038 chicago    .0038 claims
+.0036 department .0036 plans      .0035 regulators .0035 french
+.0034 wage       .0034 order      .0033 against    .0032 foreign
+.0032 authoritie .0031 allow      .0030 rejected   .0030 act
+.0030 local      .0030 environmen .0030 collection .0029 bankruptcy
+.0029 enforcemen .0029 seeking    .0029 system     .0029 lawsuit
+.0028 secret     .0028 blackberry .0027 minimum    .0027 washington
+.0027 justice    .0027 accounting .0027 members    .0027 help
+.0026 whether    .0026 denies     .0026 informatio .0026 detroit
+.0025 article    .0025 policy     .0025 council    .0024 audit
+.0024 forced     .0024 decision   .0024 firm       .0022 intelligen
+.0022 failed     .0022 whistleblo .0022 transparen .0021 amendment
+.0021 lawyer     .0021 exchange   .0021 bill       .0021 requests
+.0021 proposed   .0020 russian    .0020 released   .0020 benefit
+
+
+
+-------------------------------------------------------------------
+#: 0017  P: .0297    topic16
+-------------------------------------------------------------------
+
+.0205 video      .0177 data       .0173 internet   .0107 security
+.0100 music      .0091 online     .0083 users      .0083 target
+.0081 card       .0079 ford       .0077 mayor      .0076 password
+.0070 water      .0067 beats      .0066 computer   .0065 million
+.0064 website    .0060 system     .0060 web        .0059 rob
+.0058 hackers    .0057 solar      .0055 toronto    .0054 breach
+.0053 credit     .0052 report     .0051 research   .0048 email
+.0047 access     .0047 informatio .0046 accounts   .0046 phone
+.0044 streaming  .0044 created    .0043 records    .0042 site
+.0041 youtube    .0040 hacking    .0039 payments   .0039 according
+.0037 number     .0036 microsoft  .0036 arrested   .0035 ios
+.0035 massive    .0035 address    .0034 kim        .0034 snapchat
+.0033 service    .0033 blair      .0032 stolen     .0031 privacy
+.0031 people     .0030 launch     .0030 traffic    .0030 jamaican
+.0029 personal   .0028 kardashian .0028 leaked     .0028 google
+.0028 scientists .0026 kanye      .0026 game       .0026 words
+.0026 malware    .0026 u.s.       .0026 planet     .0026 xbox
+.0025 west       .0025 slurring   .0025 switch     .0024 warned
+.0024 name       .0024 bit        .0024 attempt    .0024 emerged
+.0023 caught     .0023 camera     .0022 windows    .0022 drinking
+.0022 code       .0021 company    .0021 citizens   .0021 posted
+.0021 small      .0020 protect    .0020 screen     .0020 appears
+.0020 ranting    .0020 crack      .0020 list       .0020 experts
+.0019 life       .0019 accent     .0019 compromise .0019 amount
+.0019 city       .0019 earth      .0019 fraud      .0019 admitted
+
+
+
+-------------------------------------------------------------------
+#: 0018  P: .0293    topic17
+-------------------------------------------------------------------
+
+.0219 united     .0155 super      .0135 manchester .0134 game
+.0130 bowl       .0106 club       .0095 team       .0092 chelsea
+.0082 player     .0081 arsenal    .0078 city       .0078 football
+.0071 star       .0071 west       .0068 transfer   .0066 man
+.0066 play       .0061 sign       .0059 sports     .0059 deal
+.0057 fans       .0054 former     .0051 david      .0050 mata
+.0049 liverpool  .0049 league     .0047 anelka     .0047 striker
+.0044 cup        .0044 video      .0041 match      .0039 harry
+.0038 nfl        .0038 sherman    .0037 target     .0036 tottenham
+.0035 beckham    .0034 season     .0033 charge     .0033 final
+.0033 madrid     .0033 juan       .0032 commercial .0032 nba
+.0032 defender   .0032 gesture    .0032 nicolas    .0031 michael
+.0031 ad         .0031 champion   .0030 stadium    .0030 ham
+.0029 premier    .0029 bid        .0029 claims     .0028 real
+.0028 revealed   .0028 quenelle   .0028 prince     .0027 midfielder
+.0027 against    .0027 report     .0026 richard    .0025 joined
+.0024 inspired   .0024 fa         .0024 victoria   .0024 french
+.0023 race       .0023 reunite    .0023 sunderland .0023 everton
+.0022 diego      .0022 released   .0022 london     .0022 goal
+.0022 balloon    .0022 south      .0021 boss       .0021 pole
+.0021 made       .0020 tickets    .0020 spurs      .0020 seattle
+.0020 receive    .0020 face       .0019 girls      .0019 hotspur
+.0019 jokes      .0019 scored     .0019 side       .0019 round
+.0018 support    .0018 big        .0018 san        .0018 championsh
+.0017 leg        .0017 bridge     .0017 sing       .0017 leave
+
+
+
+-------------------------------------------------------------------
+#: 0019  P: .0372    topic18
+-------------------------------------------------------------------
+
+.0325 call       .0305 executive  .0264 chief      .0233 officer
+.0226 research   .0198 earnings   .0191 division   .0187 president
+.0168 conference .0153 operator   .0138 ceo        .0136 financial
+.0118 bank       .0114 results    .0104 vice       .0101 q4
+.0096 inc        .0094 chairman   .0094 discusses  .0091 management
+.0084 presentati .0076 director   .0075 analysts   .0072 welcome
+.0067 transcript .0066 good       .0065 capital    .0063 company
+.0059 thank      .0058 relations  .0057 morgan     .0055 board
+.0055 group      .0054 quarter    .0053 john       .0053 investor
+.0053 corporatio .0051 markets    .0050 complete   .0048 senior
+.0048 story      .0044 james      .0042 mr         .0041 appointed
+.0039 instructio .0038 securities .0036 partners   .0035 david
+.0035 stanley    .0034 suisse     .0034 michael    .0033 robert
+.0033 member     .0031 deutsche   .0031 goldman    .0031 ag
+.0030 recorded   .0029 participan .0029 technologi .0029 turn
+.0028 joining    .0028 sachs      .0026 credit     .0026 mark
+.0026 lynch      .0025 webcast    .0025 committee  .0024 name
+.0023 jpmorgan   .0023 cfo        .0022 merrill    .0022 fargo
+.0022 listen     .0022 ladies     .0022 everyone   .0022 paul
+.0021 gentlemen  .0021 mode       .0021 barclays   .0020 jp
+.0020 session    .0019 ubs        .0019 stifel     .0019 jefferies
+.0018 finance    .0018 jim        .0018 chris      .0017 america
+.0017 statements .0017 chase      .0017 eagle      .0017 standing
+.0017 host       .0017 kevin      .0016 communicat .0016 global
+.0016 jason      .0016 release    .0016 jeff       .0016 reminder
+
+
+
+-------------------------------------------------------------------
+#: 0020  P: .0489    topic19
+-------------------------------------------------------------------
+
+.0234 service    .0187 company    .0169 mobile     .0138 customers
+.0102 million    .0094 business   .0094 technology .0091 health
+.0090 online     .0073 devices    .0073 provide    .0068 developmen
+.0066 offer      .0065 amazon     .0062 verizon    .0061 tv
+.0060 software   .0059 products   .0055 pay        .0055 care
+.0054 store      .0053 phone      .0052 smartphone .0052 network
+.0049 launched   .0049 microsoft  .0048 buy        .0048 market
+.0048 yahoo      .0047 retail     .0047 intel      .0046 search
+.0043 internet   .0043 money      .0043 plans      .0042 cloud
+.0042 app        .0042 accounts   .0041 platform   .0041 apple
+.0040 google     .0039 communicat .0039 industry   .0038 tech
+.0038 bank       .0037 based      .0037 free       .0037 insurance
+.0037 according  .0036 management .0035 part       .0035 iphone
+.0033 vatican    .0033 help       .0033 startup    .0033 data
+.0032 design     .0032 acquired   .0032 purchase   .0032 users
+.0031 price      .0031 consumers  .0030 shopping   .0029 system
+.0029 open       .0029 report     .0029 media      .0028 patients
+.0028 access     .0028 allows     .0027 contract   .0027 program
+.0027 ceo        .0026 coverage   .0026 samsung    .0026 sales
+.0025 target     .0025 pinterest  .0025 web        .0025 number
+.0024 growing    .0024 tablets    .0024 deliver    .0024 site
+.0023 deal       .0023 channels   .0023 signed     .0023 solutions
+.0022 work       .0022 innovation .0022 leading    .0022 cable
+.0022 enterprise .0022 personal   .0022 feature    .0022 giant
+.0022 available  .0021 connection .0021 control    .0021 acquisitio
+
+
+
+-------------------------------------------------------------------
+#: 0021  P: .0287    topic20
+-------------------------------------------------------------------
+
+.0220 car        .0200 google     .0138 ebay       .0134 icahn
+.0132 glass      .0121 apple      .0102 mine       .0099 san
+.0085 south      .0084 tech       .0081 crash      .0079 carl
+.0077 francisco  .0068 activist   .0066 dogs       .0064 vehicles
+.0063 company    .0063 paypal     .0061 proposal   .0058 board
+.0057 investor   .0056 engineerin .0054 plant      .0054 spin
+.0054 blue       .0053 diamond    .0052 man        .0051 movie
+.0049 safety     .0049 theater    .0048 test       .0048 stake
+.0047 technology .0046 electric   .0046 driving    .0045 africa
+.0045 rare       .0044 valley     .0042 miners     .0042 regulation
+.0041 wearing    .0040 employees  .0040 driver     .0039 seats
+.0039 robots     .0039 reuters    .0036 coal       .0036 african
+.0036 blast      .0035 called     .0034 inc        .0033 public
+.0032 business   .0032 officials  .0031 bus        .0031 statue
+.0031 transport  .0031 city       .0031 nelson     .0029 chemical
+.0029 shuttles   .0029 buses      .0028 added      .0028 production
+.0028 million    .0028 screen     .0027 disease    .0027 mandela
+.0027 giant      .0026 tesla      .0026 sign       .0025 owners
+.0025 explosion  .0025 workers    .0025 device     .0024 hours
+.0023 associatio .0023 silicon    .0023 motors     .0023 stops
+.0023 discovered .0022 accident   .0022 mondelez   .0022 recording
+.0022 rabbit     .0022 point      .0022 sensors    .0021 north
+.0021 battle     .0021 pilot      .0021 cat        .0021 ohio
+.0021 fire       .0021 research   .0020 platinum   .0020 manufactur
+.0020 auto       .0020 inside     .0019 maker      .0019 area
+</pre></div>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="http://akuz.me/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="http://akuz.me/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="http://akuz.me/categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
