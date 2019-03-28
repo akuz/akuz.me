@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  High Precision in Frequency Domain | akuz.me/nko
+</title>
+  <link rel="canonical" href="http://akuz.me/high-precision-in-frequency-domain.html">
+
+
+  <link rel="stylesheet" href="http://akuz.me/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="http://akuz.me/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="http://akuz.me/feeds/all.atom.xml">
+  
+  <meta name="description" content="Modern electronic house and techno music is highly repetitive. I am not saying that it is, therefore, boring. I am a big fan of certain styles myself! What I am saying is that patterns are being repeated over and over, and it is the variation of the patterns over time …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-47495265-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="http://akuz.me/">akuz.me/nko</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/">Home</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="http://akuz.me/pages/software.html">Software</a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  High Precision in Frequency Domain
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2019-03-23T00:00:00+00:00">
+          <i class="fa fa-clock-o"></i>
+          Sat 23 March 2019
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="http://akuz.me/category/experiments.html">Experiments</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="http://akuz.me/author/akuz.html">akuz</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Modern electronic house and techno music is highly repetitive. I am not saying that it is, therefore, boring. I am a big fan of certain styles myself! What I am saying is that patterns are being repeated over and over, and it is the variation of the patterns over time that makes this music interesting.</p>
+<p>The repetitive nature of electronic music makes some people feel like it is simple, artificial, robotic, almost pre-programmed. It <em>feels</em> like it could have been even generated automatically by a simple algorithm: “take this pattern, repeat 8 times, overlap with another pattern repeated 16 times, slowly fade in the last pattern and repeat it 8 times.”</p>
+<p>Researchers in the field of deep learning made huge advances in extracting the structure from <em>images</em> using convolutional neural networks. They have also learned how to generate convincing artificial images using GANs, probabilistic auto-encoders and what not… So, why hasn’t the same progress been achieved with application of deep learning to music? It is easy to imagine that an algorithm could be designed to learn from a sample of music in a certain style, and then learn to generate the music in the same style.</p>
+<p>I believe the problem lies with the <em>intermediate representations of patterns in sound</em> that have been attempted so far. Below, I am going to try to explain why, I think, the approaches that attempt to <em>apply deep learning to frequency domain representation</em> of music haven’t had much success (yet).</p>
+<p class="section-divider">...</p>
+
+<p>Sound perception is fundamentally different from visual perception in one <em>specific aspect</em> that I think is of the utmost importance. When we look at a picture, we generally perceive the concepts that are present at a specific level of details. For example, we could describe a picture as “a bunch of puppies fighting over a stick on a field of grass with flowers.” The <em>size</em> objects that we perceive as important for representing the picture varies by <em>at most</em> one order of magnitude. We would never think of providing the details of positions of all the blades of grass on which the puppies are playing.</p>
+<p>In sound, however, we perceive important features at <em>different scales that vary by many orders of magnitude</em>. We hear the frequencies in the range of 20-20,000 Hz, which spans 10 octaves (lowest frequency is doubles in each subsequent octave). The patterns that we perceive in <em>lower</em> frequencies develop over <em>longer</em> periods of time. The patterns we perceive in <em>higher</em> frequencies might occupy a very <em>short</em> period of time, even shorter than a single cycle of a low frequency. Therefore, analysing sound requires a <em>highly</em> multi-scale approach, and much more so, compared to the approaches we currently use to analyse visual information.</p>
+<p class="section-divider">...</p>
+
+<p>Let us look at an idea of applying convolutional networks to music represented in frequency domain… It is easy to say “representation in frequency domain”, but what should that representation be exactly?</p>
+<p>In order to detect the low frequencies of 20–40 Hz , we would need to use <em>relatively</em> long windows, say 200ms. However, within such a relatively long time window, a complex pattern consisting of the higher frequencies might occur, such that these higher frequencies change their amplitudes and phases to create a complex composite pattern.</p>
+<p>Therefore, if we wanted our machine learning algorithm to capture a <em>pattern</em> of how these higher frequencies change <em>over time</em>, we would necessarily need to use <em>shorter</em> time windows to detect those higher frequencies and their evolution over time. This logic needs to be extended to many orders of magnitude, spanning all 10 octaves.</p>
+<p>If we do <em>not</em> apply such multi-scale analysis, we might be able to reproduce the original sound back from the frequency domain (as FFT is invertible). However, our representation in frequency domain <em>will not be continuous</em> over time for the higher frequencies being detected from one window to another. In effect, we <em>loose the information</em> about how the amplitudes and phases of the higher frequencies change over time within the detection window.</p>
+<p>In order to obtain frequency domain representation that would be continuous over time for all frequencies being detected, I implemented multi-scale frequency analysis algorithm with shorter detection windows used for shorter frequencies. I think it <em>might</em> we equivalent to a wavelet transform. The amount of frequency domain data extracted larger for higher frequencies. This is needed in order to capture how these frequencies <em>change over time</em>.</p>
+<p class="section-divider">...</p>
+
+<p>The frequency domain representations I extracted allow reproducing the original sound almost exactly, both visually in the wave form, and according to the perception of the music being heard. This can also be achieved with FFT. However, additionally, the representation I’ve created allows seeing with much higher details how the higher frequencies evolve over time. The level of information about the frequencies <em>doubles</em> with each octave.</p>
+<p>Below you can see examples of frequency domain representations for some sounds. Again, the sound can be reproduced almost exactly from these. The pictures only display the amplitude.</p>
+<p>I believe using this representation will enable better applications of deep learning to sound represented in frequency domain. I hope to release a tool soon for converting sound into these multi-scale representations and then loading them from Python for other researchers to use.</p>
+<p>Note the <strong>exceptional level of details</strong> across the time dimension for the higher frequencies.</p>
+<hr>
+<p>House beat:</p>
+<p><img alt="House beat" class="img-fluid d-block mx-auto" src="http://akuz.me/images/freq_house.png#scalable"></p>
+<iframe class="d-block mx-auto" width="70%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/594674988&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+<hr>
+<p>Techno beat and bass:</p>
+<p><img alt="Techno beat and bass" class="img-fluid d-block mx-auto" src="http://akuz.me/images/freq_techno.png#scalable"></p>
+<iframe class="d-block mx-auto" width="70%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/594675579&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+<hr>
+<p>Thai song:</p>
+<p><img alt="Thai song" class="img-fluid d-block mx-auto" src="http://akuz.me/images/freq_thai.png#scalable"></p>
+<iframe class="d-block mx-auto" width="70%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/594676053&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+<hr>
+<p>Bach flute:</p>
+<p><img alt="Bach flute" class="img-fluid d-block mx-auto" src="http://akuz.me/images/freq_bach.png#scalable"></p>
+<iframe class="d-block mx-auto" width="70%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/594676413&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+<hr>
+<p>But why analyse the sound in frequency domain at all? Didn’t the models such as WaveNet show that the sound can be successfully analysed in raw form? I have a conjecture on why analysing the sound in frequency domain might be beneficial…</p>
+<p>We perceive <em>the same combination of frequencies</em> shifted up or down in frequency spectrum as “the same instrument playing a different note.” When such notes are represented in wave form, they correspond to the same pattern being shrunk and stretched <em>across time</em>.</p>
+<p>Therefore, if we wanted a system that would be able to <em>learn how the same instrument sounds</em>, when playing different notes, and learn the instrument typical sound from the <em>wave</em> representation of music, such machine learning algorithm would necessarily need to have <em>scale-invariance</em> of features built in.</p>
+<p>I don’t know of any good models that would allow inferring scale-invariant features <em>across several orders of magnitude</em>. However, if we look at the problem of detecting “the same instrument playing a different note” in frequency representation, different “notes” played by the same instrument simply correspond to shifting the pattern along the y-axis. And this is just location-invariance of features which is easily solved with convolutional neural networks. This provides a solution to a major issue with analysing music across the time scales spanning several orders of magnitude.</p>
+<p>I believe that the success of application of deep learning to analysing music will be enabled by better representation of sound in frequency domain and then applying machine learning algorithms that have had success in application to visual data:</p>
+<ul>
+<li>
+<p>The frequency domain representations that have been used so far are inadequate for extracting the frequency patterns that are shorter than the detection window used. The new representation will enable multi-scale analysis of music, with higher amount of frequency data for higher frequencies.</p>
+</li>
+<li>
+<p>The frequency domain representation provides a good solution for changing the problem of the scale-invariance of features (hard) to location-invariance of features (easy) in a machine learning model. Making models that provide location-invariance of features is achievable with currently popular models such as convolutional neural networks.</p>
+</li>
+</ul>
+<p>Please leave comments on <a href="https://medium.com/@akuz/high-precision-in-frequency-domain-for-deep-learning-on-electronic-music-4770f1c70c2d">Medium</a>.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="http://akuz.me/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="http://akuz.me/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="http://akuz.me/categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>

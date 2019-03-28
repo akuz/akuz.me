@@ -26,6 +26,17 @@ hr {
   margin: 1.5rem 0;
 }
 
+p.section-divider {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-block-start: 0.5em !important;
+  margin-block-end: 1.5em !important;
+  font-size: 24px !important;
+  line-height: 1em !important;
+  letter-spacing: 1em !important;
+}
+
 /* ------------------------------------------------------------------------- */
 
 .container {

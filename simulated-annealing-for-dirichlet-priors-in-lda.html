@@ -79,7 +79,7 @@
     </header>
     <div class="content">
       <p>When estimating the parameters of the LDA (Latent Dirichlet Allocation) model using Gibbs sampling, if we set the Dirichlet priors to the fixed target values (usually small), then we reduce the mixing of the samples from the target distribution from the beginning, even though we haven’t found a good approximation yet.</p>
-<p><img alt="Simulated Annealing" src="http://akuz.me/images/SimAnn2.png"></p>
+<p><img alt="Simulated Annealing" class="img-fluid d-block mx-auto" src="http://akuz.me/images/SimAnn2.png"></p>
 <p>An alternative would be to initialise the Dirichlet priors with relatively high parameters alpha, and then gradually decrease them during burn-in period. This will allod the sampler to locate the approximate area of interest faster at the initial stages, while still sampling at the target prior values after burn-in.</p>
 <p>This article describes application of simulated annealing technique for MCMC inference of multinomial random distributions with Dirichlet priors in LDA. It is implemented in my NLP library for optimised Gibbs sampling for LDA (see software). The full article can be found <a href="http://akuz.me/pdfs/akuz_sim_ann_lda.pdf">here</a> (PDF).</p>
     </div>
