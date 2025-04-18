@@ -8,33 +8,16 @@
 
   <title>  LDA vs Document Clustering | akuz.me/nko
 </title>
-  <link rel="canonical" href="https://akuz.me/lda-vs-document-clustering.html">
+  <link rel="canonical" href="/lda-vs-document-clustering.html">
 
 
-  <link rel="stylesheet" href="https://akuz.me/theme/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://akuz.me/theme/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://akuz.me/theme/css/pygments/default.min.css">
-  <link rel="stylesheet" href="https://akuz.me/theme/css/theme.css">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
-        href="https://akuz.me/feeds/all.atom.xml">
   
   <meta name="description" content="I was asked at the interview what’s the difference between LDA and document clustering. I tried to explain it by explaining the difference between generative models that are assumed for the respective models. However, now I realise it would have been much more effective to give a much simpler …">
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o);
-      a.async = 1;
-      a.src = g;
-      m = s.getElementsByTagName(o)[0];
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-47495265-1', 'auto');
-    ga('send', 'pageview');
-  </script>
 
 
 </head>
@@ -44,13 +27,13 @@
     <div class="container">
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="title"><a href="https://akuz.me/">akuz.me/nko</a></h1>
+    <h1 class="title"><a href="/">akuz.me/nko</a></h1>
       <ul class="list-inline">
           <li class="list-inline-item"><a href="/">Home</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="https://akuz.me/pages/about.html">About</a></li>
-            <li class="list-inline-item"><a href="https://akuz.me/pages/papers.html">Papers</a></li>
-            <li class="list-inline-item"><a href="https://akuz.me/pages/software.html">Software</a></li>
+            <li class="list-inline-item"><a href="/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="/pages/software.html">Software</a></li>
       </ul>
   </div>
 </div>    </div>
@@ -70,21 +53,21 @@
         </li>
         <li class="list-inline-item">
           <i class="fa fa-folder-open-o"></i>
-          <a href="https://akuz.me/category/experiments.html">Experiments</a>
+          <a href="/category/experiments.html">Experiments</a>
         </li>
           <li class="list-inline-item">
             <i class="fa fa-user-o"></i>
-              <a href="https://akuz.me/author/akuz.html">akuz</a>          </li>
+              <a href="/author/akuz.html">akuz</a>          </li>
       </ul>
     </header>
     <div class="content">
       <p>I was asked at the interview what’s the difference between LDA and document clustering. I tried to explain it by explaining the difference between generative models that are assumed for the respective models. However, now I realise it would have been much more effective to give a much simpler example.</p>
-<p><img alt="Bread Data" class="img-fluid d-block mx-auto" src="https://akuz.me/images/Bread_Data.png"></p>
+<p><img alt="Bread Data" class="img-fluid d-block mx-auto" src="/images/Bread_Data.png"></p>
 <p>Imagine you have a dataset of objects that you can broadly classify as “plain bread” and “bread with seeds”. For this example, it is important that these objects share some similarity, but also have important differences:</p>
 <p>With the document clustering approach, if you had a model that would need to group these objects into 2 clusters, then you would end up with the following results:</p>
-<p><img alt="Bread Cluster" class="img-fluid d-block mx-auto" src="https://akuz.me/images/Bread_Cluster.png"></p>
+<p><img alt="Bread Cluster" class="img-fluid d-block mx-auto" src="/images/Bread_Cluster.png"></p>
 <p>However, in the LDA approach you would not be inferring the document clusters. Instead, you would be inferring the “ingredients” of the objects, i.e. what they consist of. By running the LDA on our dataset you would end up with the following result:</p>
-<p><img alt="Bread Ingredient" class="img-fluid d-block mx-auto" src="https://akuz.me/images/Bread_Ingredient.png"></p>
+<p><img alt="Bread Ingredient" class="img-fluid d-block mx-auto" src="/images/Bread_Ingredient.png"></p>
 <p>You would also get a probability of each ingredient in each object (document).</p>
     </div>
   </article>
@@ -95,9 +78,9 @@
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-      <li class="list-inline-item"><a href="https://akuz.me/authors.html">Authors</a></li>
-    <li class="list-inline-item"><a href="https://akuz.me/archives.html">Archives</a></li>
-    <li class="list-inline-item"><a href="https://akuz.me/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
   </ul>
   <p class="col-sm-6 text-sm-right text-muted">
     Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
