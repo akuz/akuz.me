@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  🎙️ Building a Real-Time AI Voice Assistant with OpenAI & Twilio | akuz.me/nko
+</title>
+  <link rel="canonical" href="/building-a-real-time-ai-voice-assistant-with-openai-twilio.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="Recently, I built a real-time voice Q&A assistant for a working spa business — designed to answer calls, provide instant information, and send helpful follow-ups via SMS. It uses OpenAI’s GPT-4o Mini real-time API for language and voice capabilities, and integrates with Twilio for telephony and messaging. It’s …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">akuz.me/nko</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/">Home</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="/nko/">About</a></li>
+            <li class="list-inline-item"><a href="/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="/pages/software.html">Software</a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  🎙️ Building a Real-Time AI Voice Assistant with OpenAI & Twilio
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2025-04-16T00:00:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Wed 16 April 2025
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/llms.html">LLMs</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="/author/akuz.html">akuz</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Recently, I built a real-time voice Q&amp;A assistant for a working spa business — designed to answer calls, provide instant information, and send helpful follow-ups via SMS. It uses OpenAI’s GPT-4o Mini real-time API for language and voice capabilities, and integrates with Twilio for telephony and messaging.</p>
+<p>It’s already running in production, handling real customers with real questions — and doing so in a calm, human-like tone that fits the wellness environment perfectly.</p>
+<h2 id="why-i-built-it">🧠 Why I Built It</h2>
+<p>I wanted to build something practical, fast, and voice-first — something that uses LLMs not just to answer questions, but to replace a real service role.</p>
+<p>The goal was to create an assistant that can:</p>
+<ul>
+<li>Understand natural speech without button menus or scripts</li>
+<li>Provide accurate, domain-specific answers (e.g., types of massages, locations)</li>
+<li>Send helpful SMS links for booking and contact info</li>
+<li>Run reliably in the real world, not just a demo or a prototype</li>
+</ul>
+<p>Because the assistant doesn't perform actions like booking or rescheduling — only retrieves and communicates information — it was surprisingly easy to build.</p>
+<h2 id="built-in-a-week">⏱️ Built in a Week</h2>
+<p>Using GPT-4o’s built-in multimodal voice capabilities and Twilio’s voice streaming, I got a working version live in about a week. The logic for dynamic prompts, SMS responses, and fallback handling was all implemented in Python with FastAPI.</p>
+<p>By keeping the system stateless and focused on answering questions (not making decisions), I was able to build something reliable, responsive, and ready to ship — fast.</p>
+<h2 id="system-overview">🛠️ System Overview</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">Incoming</span><span class="w"> </span><span class="nv">Call</span><span class="w"> </span><span class="ss">(</span><span class="nv">Twilio</span><span class="ss">)</span>
+<span class="w">    </span>↓
+<span class="nv">Voice</span><span class="w"> </span><span class="nv">Stream</span><span class="w"> </span>→<span class="w"> </span><span class="nv">GPT</span><span class="o">-</span><span class="mi">4</span><span class="nv">o</span><span class="w"> </span><span class="nv">Mini</span><span class="w"> </span><span class="ss">(</span><span class="nv">handles</span><span class="w"> </span><span class="nv">input</span><span class="o">/</span><span class="nv">output</span><span class="w"> </span><span class="nv">natively</span><span class="ss">)</span>
+<span class="w">    </span>↓
+<span class="nv">Prompt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">Context</span><span class="w"> </span><span class="nv">Injection</span><span class="w"> </span><span class="ss">(</span><span class="nv">spa</span><span class="w"> </span><span class="nv">services</span>,<span class="w"> </span><span class="nv">branches</span><span class="ss">)</span>
+<span class="w">    </span>↓
+<span class="nv">LLM</span><span class="o">-</span><span class="nv">generated</span><span class="w"> </span><span class="nv">speech</span><span class="w"> </span><span class="nv">streamed</span><span class="w"> </span><span class="nv">back</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">caller</span>
+<span class="w">    </span>↓
+<span class="nv">SMS</span><span class="w"> </span><span class="nv">follow</span><span class="o">-</span><span class="nv">up</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">links</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">contact</span><span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="ss">(</span><span class="nv">via</span><span class="w"> </span><span class="nv">Twilio</span><span class="ss">)</span>
+<span class="w">    </span>↓
+<span class="nv">Parallel</span>:<span class="w"> </span><span class="nv">OpenAI</span><span class="w"> </span><span class="mi">4</span><span class="nv">o</span><span class="o">-</span><span class="nv">mini</span><span class="w"> </span><span class="nv">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">transcription</span><span class="w"> </span><span class="nv">logging</span>
+</code></pre></div>
+
+<p>There’s no external transcription or TTS needed during the call, as GPT-4o handles both speech input and output directly. For internal logging and quality review, I use OpenAI's 4o-mini transcription model to keep a record of what users said.</p>
+<h2 id="what-it-can-do">⚙️ What It Can Do</h2>
+<ul>
+<li>Understand and answer service-related questions</li>
+<li>Send booking links via SMS</li>
+<li>Share contact info (address, phone, email) for any branch</li>
+<li>Adapt to natural human conversation and interruption</li>
+<li>Respond in multiple languages (via system prompt switching)</li>
+</ul>
+<p>All of this without needing RAG, vector databases, or custom NLU pipelines — just intelligent prompt design and lightweight context injection.</p>
+<h2 id="whats-next">🧪 What's Next</h2>
+<p>I'm particularly excited about the next phase of this assistant — integrating it with a live booking system. That’s where things get truly interactive: letting users ask “Do you have something open tomorrow afternoon?” and getting real answers, not just links.</p>
+<p>Upcoming features include:</p>
+<ul>
+<li>📆 Real-time booking availability</li>
+<li>🧠 User memory &amp; personalization</li>
+<li>🔑 Voice-based user ID</li>
+<li>📞 Sentiment-based human fallback</li>
+</ul>
+<h2 id="reflections">🔮 Reflections</h2>
+<p>It’s a fascinating time to be building with LLMs. What used to require a full engineering team can now be prototyped and deployed by a solo developer — in a week. And thanks to models like GPT-4o, voice interaction is finally smooth enough to feel natural, not awkward.</p>
+<p>I’m proud that this assistant is already helping real people — answering their calls, pointing them in the right direction, and doing it all with clarity and calmness.</p>
+<p>🧖‍♀️ Try it for yourself at <a href="https://uk.thyspa.com">Thy Spa</a> website.</p>
+<p>—</p>
+<p>If you're building in this space or just curious about real-time AI interfaces, I’d love to connect and exchange ideas.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>

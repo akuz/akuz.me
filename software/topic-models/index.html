@@ -8,7 +8,7 @@
 
   <title>  Software / Topic Models | akuz.me/nko
 </title>
-  <link rel="canonical" href="/pages/software/topic-models.html">
+  <link rel="canonical" href="/software/topic-models/index.html">
 
 
   <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/theme/css/theme.css">
 
   
-  <meta name="description" content="Between 2011 and 2014, I actively explored topic modeling within the field of Natural Language Processing (NLP), focusing on enhancements to the Latent Dirichlet Allocation (LDA) algorithm. My work aimed to improve the efficiency, flexibility, and interpretability of LDA through several key innovations: Simulated Annealing for Gibbs Sampling: Implemented simulated …">
+  <meta name="description" content="I've been actively researching Topic Models (part of Natural Language Processing, NLP) during 2011-2014. I've implemented a few enhancements to the Latent Dirichlet Allocation model: Simulated Annealing (for faster Gibbs sampling convergence) Topic Keywords (specify high probability words for specific topics) Multiprocessor Parallelisation (you can specify thread count) The first …">
 
 
 </head>
@@ -31,9 +31,9 @@
       <ul class="list-inline">
           <li class="list-inline-item"><a href="/">Home</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="/nko/">About</a></li>
-            <li class="list-inline-item"><a href="/pages/papers.html">Papers</a></li>
-            <li class="list-inline-item"><a href="/pages/software.html">Software</a></li>
+            <li class="list-inline-item"><a href="/about/">About</a></li>
+            <li class="list-inline-item"><a href="/papers/">Papers</a></li>
+            <li class="list-inline-item"><a href="/software/">Software</a></li>
       </ul>
   </div>
 </div>    </div>
@@ -46,19 +46,20 @@
       <hr>
   <article class="article">
     <div class="content">
-      <p>Between 2011 and 2014, I actively explored topic modeling within the field of Natural Language Processing (NLP), focusing on enhancements to the <a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation">Latent Dirichlet Allocation</a> (LDA) algorithm. My work aimed to improve the efficiency, flexibility, and interpretability of LDA through several key innovations:</p>
+      <p>I've been actively researching Topic Models (part of Natural Language Processing, NLP) during 2011-2014.</p>
+<p>I've implemented a few enhancements to the  <a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation">Latent Dirichlet Allocation</a> model:</p>
 <ul>
-<li><strong>Simulated Annealing for Gibbs Sampling:</strong> Implemented simulated annealing to accelerate the convergence of Gibbs sampling, enhancing the efficiency of topic inference.</li>
-<li><strong>Topic Keyword Constraints:</strong> Introduced the ability to specify high-probability words for specific topics, allowing for guided topic formation based on domain knowledge.</li>
-<li><strong>Multiprocessor Parallelization:</strong> Enabled multi-threaded execution of the LDA algorithm, allowing users to specify the number of threads to leverage multicore processors effectively.​</li>
+<li>Simulated Annealing (for faster Gibbs sampling convergence)</li>
+<li>Topic Keywords (specify high probability words for specific topics)</li>
+<li>Multiprocessor Parallelisation (you can specify thread count)</li>
 </ul>
-<p>These enhancements are detailed in my research notes, which you can find <a href="/pages/papers.html">here</a>.</p>
-<h3 id="source-code-on-github">Source Code on GitHub</h3>
-<p>While the codebase may now serve primarily as a historical reference, it includes several Java libraries developed during this research:</p>
+<p>The first two are described in research notes which you can find <a href="/papers/">here</a>.</p>
+<p>The code itself now could probably be only useful as a historical reference...</p>
+<h3 id="download-source-code">Download Source Code</h3>
 <ul>
 <li><a href="https://github.com/akuz/akuz-java"><i class="fa fa-github"></i>&nbsp;akuz-java</a> - various Java libraries, including:</li>
-<li><code>akuz-nlp</code> - A library for Natural Language Processing tasks</li>
-<li><code>akuz-nlp-run-lda</code> - An implementation of LDA with Gibbs sampling.</li>
+<li><code>akuz-nlp</code> - Natural Language Processing (NLP) library</li>
+<li><code>akuz-nlp-run-lda</code> - How to run LDA Gibbs sampling</li>
 </ul>
 <h3 id="download-test-data">Download Test Data</h3>
 <p>The below zip files contain abstracts (or full texts, depending on the source) of news articles. Close duplicates from the same source have been removed. The data does not have source names or timestamps. First line in each file is a title.</p>
