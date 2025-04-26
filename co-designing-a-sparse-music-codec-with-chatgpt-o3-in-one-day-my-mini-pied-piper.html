@@ -69,8 +69,6 @@
 <p><a href="/pdfs/2025_04_co_model_spec.pdf"><img alt="Formulae illustration" class="img-fluid d-block mx-auto" src="/images/2025_co_design_0.png"></a></p>
 <h2 id="implementingand-debuggingthe-first-learning-loop">Implementing—and debugging—the first learning loop</h2>
 <p>o3 then produced a clean repo: separate modules for patterns, occurrences, a differentiable lattice writer, and a training script. The first run showed falling loss yet every pattern remained zero. In chat we traced the issue to hard gates that silenced magnitudes before gradients could reach them; replacing the mask with soft weights solved the problem immediately, and patterns began to develop non-zero amplitudes and phases. For visibility we added a simple ASCII heat-map that printed the target spectrogram, the reconstruction, and their difference directly in the terminal.</p>
-<h2 id="one-working-day-later">One working day later...</h2>
-<p>By the evening the model could reconstruct a synthetic test grid with a small dictionary and far fewer occurrences than pixels. No extensive design document, no weekend-long coding marathon—just a day of iterative conversation with an AI partner. Next steps are clear: push the code to GitHub, train on real electronic tracks, and measure how low we can take the bitrate. </p>
 <h2 id="ascii-illustrations-for-debugging">ASCII illustrations for debugging</h2>
 <p>I initialised the data (grid of complex numbers) to a weavy pattern (ASCII reprentation of the magnitude):</p>
 <p><img alt="Target Data" class="img-fluid d-block mx-auto" src="/images/2025_co_design_1.png"></p>
@@ -78,6 +76,8 @@
 <p><img alt="Reconstruction" class="img-fluid d-block mx-auto" src="/images/2025_co_design_2.png"></p>
 <p>The ASCII imllustration below shows the part of the data that is not described by the algorithm, due to a limited number of patterns and occurrences.</p>
 <p><img alt="Missing part" class="img-fluid d-block mx-auto" src="/images/2025_co_design_3.png"></p>
+<h2 id="one-working-day-later">One working day later...</h2>
+<p>By the evening the model could reconstruct a synthetic test grid with a small dictionary and far fewer occurrences than pixels. No extensive design document, no weekend-long coding marathon—just a day of iterative conversation with an AI partner. Next steps are clear: push the code to GitHub, train on real electronic tracks, and measure how low we can take the bitrate. </p>
 <h2 id="what-makes-this-prototype-different">What makes this prototype different</h2>
 <p>The crucial detail is that occurrences are not tied to the lattice. Each centre is stored as two unit-complex numbers whose phases map to continuous coordinates, so patterns can be placed anywhere—even between grid cells—while gradients still flow. A single pattern can therefore be reused at arbitrary offsets instead of being cloned for every shift. This first experiment shows that phase-parametrised placement can turn a dense spectrogram into a sparse set of grid-free building blocks, opening the door to extremely compact music compression.</p>
 <h2 id="conclusion">Conclusion</h2>
