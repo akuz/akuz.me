@@ -8,20 +8,30 @@
 
   <title>  📑 Topic Keywords Case Study | akuz.me/nko
 </title>
-  <link rel="canonical" href="/topic-keywords-case-study.html">
+  <link rel="canonical" href="https://akuz.me/topic-keywords-case-study.html">
 
 
-  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
-  <link rel="stylesheet" href="/theme/css/theme.css">
+  <link rel="stylesheet" href="https://akuz.me/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://akuz.me/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://akuz.me/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://akuz.me/theme/css/theme.css">
 
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://akuz.me/feeds/all.atom.xml">
   
   <meta name="description" content="I present a case study on a corpus of 10,000 news articles. We will investigate the topic structure of the corpus, by gradually “freezing” the topics through specifying their keywords, and seeing what other topics come up. The process shows how you can extract useful topics from your corpus …">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB1B2SPH90"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-
-
+    gtag('config', 'G-XB1B2SPH90');
+  </script>
   
+
+
 </head>
 
 <body>
@@ -29,13 +39,13 @@
     <div class="container">
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="title"><a href="/">akuz.me/nko</a></h1>
+    <h1 class="title"><a href="https://akuz.me/">akuz.me/nko</a></h1>
       <ul class="list-inline">
           <li class="list-inline-item"><a href="/">Home</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="/nko/">About</a></li>
-            <li class="list-inline-item"><a href="/pages/papers.html">Papers</a></li>
-            <li class="list-inline-item"><a href="/pages/software.html">Software</a></li>
+            <li class="list-inline-item"><a href="https://akuz.me/nko/">About</a></li>
+            <li class="list-inline-item"><a href="https://akuz.me/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="https://akuz.me/pages/software.html">Software</a></li>
       </ul>
   </div>
 </div>    </div>
@@ -55,11 +65,11 @@
         </li>
         <li class="list-inline-item">
           <i class="fa fa-folder-open-o"></i>
-          <a href="/category/experiments.html">Experiments</a>
+          <a href="https://akuz.me/category/experiments.html">Experiments</a>
         </li>
           <li class="list-inline-item">
             <i class="fa fa-user-o"></i>
-              <a href="/author/akuz.html">akuz</a>          </li>
+              <a href="https://akuz.me/author/akuz.html">akuz</a>          </li>
       </ul>
     </header>
     <div class="content">
@@ -74,7 +84,7 @@
 </code></pre></div>
 
 <p>Limitations: 10,000 new articles represent approximately only 2 days of news from 400 top world newspapers and blogs. Therefore, the topic structure will be highly biased to the events reported during this period. Also, I will only use 250 Gibbs sampling iterations after burn in to infer the topics.</p>
-<p>The details of the configuration parameters are provided in the <code>README</code> file of the of <code>akuz-java-nlp-run-lda</code> package from the <code>akuz-java</code> library. Please see the <a href="/pages/software.html">software</a> page for more details.</p>
+<p>The details of the configuration parameters are provided in the <code>README</code> file of the of <code>akuz-java-nlp-run-lda</code> package from the <code>akuz-java</code> library. Please see the <a href="https://akuz.me/pages/software.html">software</a> page for more details.</p>
 <p>First, we run <code>akuz-java-nlp-run-lda.sh</code> with the following topics config:</p>
 <div class="highlight"><pre><span></span><code>[
   {
@@ -185,7 +195,7 @@
 <span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">members</span><span class="w">    </span><span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">security</span><span class="w">   </span><span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">target</span><span class="w">     </span><span class="m m-Double">.0019</span><span class="w"> </span><span class="nx">attempt</span>
 </code></pre></div>
 
-<p>You can see the complete list of topics <a href="/txt/topics_1.txt">here</a>.</p>
+<p>You can see the complete list of topics <a href="https://akuz.me/txt/topics_1.txt">here</a>.</p>
 <p>We can now see that we would perhaps with to detect some of these topics in the future articles, so we need to infer more relevant words, independent from other topics. Let’s specify topics configuration for the next attempt as follows:</p>
 <div class="highlight"><pre><span></span><code>[
   {
@@ -378,7 +388,7 @@
 <span class="nf">.0021</span><span class="w"> </span><span class="no">secret</span><span class="w">     </span><span class="no">.0021</span><span class="w"> </span><span class="no">transparen</span><span class="w"> </span><span class="no">.0021</span><span class="w"> </span><span class="no">russia</span><span class="w">     </span><span class="no">.0021</span><span class="w"> </span><span class="no">requests</span>
 </code></pre></div>
 
-<p>You can see the complete list of topics <a href="/txt/topics_2.txt">here</a>.</p>
+<p>You can see the complete list of topics <a href="https://akuz.me/txt/topics_2.txt">here</a>.</p>
 <p>First, you might find it interesting that the inference has brought up additional high-probability words into the us_gov and protests topics. This might be a useful feature in itself, if your goal is to see what words are correlated (within a topic) with the keywords.</p>
 <p>Second, specification of the "frozen" topics (through keywords) lets the algorithm to separate the other topics more clearly. For example, we might see that even though we have allocated the whole topic to us_gov (which mainly concentrated in the international issues), we can see that an additional topic about US healthcare has come up.</p>
 <p>Let’s now dedicate a new topic to US healthcare in configuration. Additionally, let’s specify another topic to capture the words related to the film industry:</p>
@@ -600,7 +610,7 @@
 <span class="m m-Double">.0021</span><span class="w"> </span><span class="nx">investigat</span><span class="w"> </span><span class="m m-Double">.0021</span><span class="w"> </span><span class="nx">drug</span><span class="w">       </span><span class="m m-Double">.0021</span><span class="w"> </span><span class="nx">thai</span><span class="w">       </span><span class="m m-Double">.0021</span><span class="w"> </span><span class="nx">fatal</span>
 </code></pre></div>
 
-<p>You can see the complete list of topics <a href="/txt/topics_3.txt">here</a>.</p>
+<p>You can see the complete list of topics <a href="https://akuz.me/txt/topics_3.txt">here</a>.</p>
 <p>We can detect the following issues now:</p>
 <ul>
 <li>us_gov topic mixes the news about the US and the UK &mdash; so we want to introduce new topic for UK government</li>
@@ -955,7 +965,7 @@
 <span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">smuggling</span><span class="w">  </span><span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">syria</span><span class="w">      </span><span class="m m-Double">.0020</span><span class="w"> </span><span class="nx">heart</span><span class="w">      </span><span class="m m-Double">.0019</span><span class="w"> </span><span class="nx">investigat</span>
 </code></pre></div>
 
-<p>You can see the complete list of topics <a href="/txt/topics_4.txt">here</a>.</p>
+<p>You can see the complete list of topics <a href="https://akuz.me/txt/topics_4.txt">here</a>.</p>
 <p>As you can see, we now obtain topics that are very relevant to the keywords that we specified. By providing the keywords, we also helped the algorithm to separate the topics that would be hard to separate without the hints. For example, the words “star” and “play” use used in many different topics, as well as the word “government”, which originally caused topics bundling, but were unwound once we specified the additional keywords.</p>
 <p>However, now we can see that us_gov topic got mixed up with a topic about corporations, where they frequently mention the word “president” too. We can now proceed by creating a dedicated topic for “president company conference call”, and then continue our research further.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -973,7 +983,7 @@ case with the current study), you can infer very generic topics,
 that would provide a lot of correlated words in addition to the
 keywords you specify. The richness of thus inferred topics allows
 detecting them with a high precision in the future unseen documents.</p>
-<p>Please see the <a href="/pages/software.html">software</a> page
+<p>Please see the <a href="https://akuz.me/pages/software.html">software</a> page
 to get the code.</p>
     </div>
   </article>
@@ -984,9 +994,9 @@ to get the code.</p>
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
-    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
-    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://akuz.me/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="https://akuz.me/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://akuz.me/categories.html">Categories</a></li>
   </ul>
   <p class="col-sm-6 text-sm-right text-muted">
     Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
