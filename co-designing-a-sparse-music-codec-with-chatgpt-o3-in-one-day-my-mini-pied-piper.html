@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  🎛️ Co-Designing a Sparse Music Codec with ChatGPT o3 in One Day — My Mini Pied Piper | akuz.me/nko
+</title>
+  <link rel="canonical" href="/co-designing-a-sparse-music-codec-with-chatgpt-o3-in-one-day-my-mini-pied-piper.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="For years I’ve wanted to build a super-dense electronic-music compressor: keep only the loops and phase cues that really matter, then re-synthesise the track perfectly. Evenings and weekends, however, were never long enough to design the model, write the maths, and wrangle PyTorch. Recently I opened ChatGPT running the …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">akuz.me/nko</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/">Home</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="/nko/">About</a></li>
+            <li class="list-inline-item"><a href="/pages/papers.html">Papers</a></li>
+            <li class="list-inline-item"><a href="/pages/software.html">Software</a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  🎛️ Co-Designing a Sparse Music Codec with ChatGPT o3 in One Day — My Mini Pied Piper
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2025-04-26T00:00:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Sat 26 April 2025
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/experiments.html">Experiments</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="/author/akuz.html">akuz</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>For years I’ve wanted to build a super-dense electronic-music compressor: keep only the loops and phase cues that really matter, then re-synthesise the track perfectly. Evenings and weekends, however, were never long enough to design the model, write the maths, and wrangle PyTorch. Recently I opened ChatGPT running the new o3 model and treated it as a design partner. If we could keep the conversation focused, perhaps we could sketch—and prototype—the entire idea in a single stretch.</p>
+<h2 id="co-designing-the-generative-model">Co-designing the generative model</h2>
+<p>We started by deciding how the data should look. I wanted a phase-aware spectrogram—complex numbers on an 
+<code>𝐹 × 𝑁</code> grid—rebuilt from a handful of reusable patterns and a sparse list of occurrences. I proposed details; o3 replied with equations. We swapped <code>3 × 3</code> windows for <code>5 × 5</code>, removed global gains then re-introduced per-occurrence magnitudes, and replaced hard clamping with bilinear interpolation so gradients would flow. After several iterations we froze a checkpoint: unit-normalised patterns, fractional offsets encoded as phases, occurrences positioned by two complex numbers rather than fixed indices. o3 typeset the whole formulation in LaTeX, and I compiled it into a <a href="/pdfs/2025_04_co_model_spec.pdf">concise PDF</a>.</p>
+<h2 id="implementingand-debuggingthe-first-learning-loop">Implementing—and debugging—the first learning loop</h2>
+<p>o3 then produced a clean repo: separate modules for patterns, occurrences, a differentiable lattice writer, and a training script. The first run showed falling loss yet every pattern remained zero. In chat we traced the issue to hard gates that silenced magnitudes before gradients could reach them; replacing the mask with soft weights solved the problem immediately, and patterns began to develop non-zero amplitudes and phases. For visibility we added a simple ASCII heat-map that printed the target spectrogram, the reconstruction, and their difference directly in the terminal.</p>
+<h2 id="one-working-day-later">One working day later...</h2>
+<p>By the evening the model could reconstruct a synthetic test grid with a small dictionary and far fewer occurrences than pixels. No extensive design document, no weekend-long coding marathon—just a day of iterative conversation with an AI partner. Next steps are clear: push the code to GitHub, train on real electronic tracks, and measure how low we can take the bitrate. </p>
+<p>See github repository <a href="https://github.com/akuz/o3_codec_experiment_apr_2025">here</a>.</p>
+<h2 id="what-makes-this-prototype-different">What makes this prototype different</h2>
+<p>The crucial detail is that occurrences are not tied to the lattice. Each centre is stored as two unit-complex numbers whose phases map to continuous coordinates, so patterns can be placed anywhere—even between grid cells—while gradients still flow. A single pattern can therefore be reused at arbitrary offsets instead of being cloned for every shift. This first experiment shows that phase-parametrised placement can turn a dense spectrogram into a sparse set of grid-free building blocks, opening the door to extremely compact music compression.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
