@@ -14,6 +14,7 @@
 &lt;p&gt;&lt;img alt="Reconstruction" class="img-fluid d-block mx-auto" src="https://akuz.me/images/2025_co_design_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;The ASCII imllustration below shows the part of the data that is not described by the algorithm, due to a limited number of patterns and occurrences.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Missing part" class="img-fluid d-block mx-auto" src="https://akuz.me/images/2025_co_design_3.png"&gt;&lt;/p&gt;
+&lt;p&gt;UPDATE 2025/04/25: the incomlete reconstruction of the data was actually caused by a bug in the model, where the pattern occurrences could only be placed in the top left quadrant. This is because occurrence locations are parametrised by two complex numbers with phases (-pi, pi), and they were accidentally centered on the top left corner instead of the centre. I've fixed it in the code on GitHub now, but keeping the blog post the same, just added this update.&lt;/p&gt;
 &lt;h2 id="one-working-day-later"&gt;One working day later...&lt;/h2&gt;
 &lt;p&gt;By the evening the model could reconstruct a synthetic test grid with a small dictionary and far fewer occurrences than pixels. No extensive design document, no weekend-long coding marathon—just a day of iterative conversation with an AI partner. Next steps are clear: push the code to GitHub, train on real electronic tracks, and measure how low we can take the bitrate. &lt;/p&gt;
 &lt;h2 id="what-makes-this-prototype-different"&gt;What makes this prototype different&lt;/h2&gt;
