@@ -506,7 +506,7 @@ ready(function() {
       app.scheduleData = processScheduleData(currentMonthRecords);
       
       // Clear status if we have data
-      if (app.employees.length  3e 0) {
+      if (app.employees.length > 0) {
         app.status = '';
       } else {
         app.status = 'No employees found. Please check your employee table configuration.';
