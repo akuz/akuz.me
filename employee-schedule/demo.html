@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Schedule Widget - Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <!-- Demo notice -->
+            <div class="alert alert-info">
+                <strong>Demo Mode:</strong> This is a demonstration of the Employee Schedule widget with sample data.
+            </div>
+            
+            <!-- Main content -->
+            <div class="schedule-container">
+                <!-- Month selector -->
+                <div class="month-selector">
+                    <button class="btn btn-sm btn-default" @click="previousMonth">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <h4 class="month-title">{{ monthTitle }}</h4>
+                    <button class="btn btn-sm btn-default" @click="nextMonth">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                    <button class="btn btn-sm btn-primary" @click="goToCurrentMonth">Current Month</button>
+                    <button class="btn btn-sm btn-success" @click="showAddEmployeeModal">
+                        <span class="glyphicon glyphicon-plus"></span> Add Employee Schedule
+                    </button>
+                </div>
+
+                <!-- Schedule table -->
+                <div class="table-responsive">
+                    <table class="table table-bordered schedule-table">
+                        <thead>
+                            <tr>
+                                <th class="date-column">Date</th>
+                                <th v-for="employee in employees" :key="employee.id" class="employee-column">
+                                    <div class="employee-name">{{ employee.name }}</div>
+                                    <div class="hour-type-headers">
+                                        <span class="hour-type-label office" title="Hours in Office">Office:</span>
+                                        <span class="hour-type-label massage" title="Hours doing Massage">Massage:</span>
+                                        <span class="hour-type-label sick" title="Sick Hours">Sick:</span>
+                                        <span class="hour-type-label holiday" title="Holiday Hours">Holiday:</span>
+                                    </div>
+                                </th>
+                                <th class="filler-column"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="date in allDays" :key="date.dateString" class="date-row" :class="{ 'weekend-row': date.isWeekend }">
+                                <td class="date-cell" :class="{ 'weekend-cell': date.isWeekend }">
+                                    <div class="date-label">{{ date.dateLabel }}</div>
+                                    <div class="day-label">{{ date.dayName }}</div>
+                                </td>
+                                <td v-for="employee in employees" :key="employee.id" class="schedule-cell">
+                                    <div class="schedule-entry-columns">
+                                        <div class="hour-column office">
+                                            <input 
+                                                type="number" 
+                                                class="hour-input" 
+                                                :value="getHours(date.dateString, employee.id, 'office')"
+                                                @input="updateHours(date.dateString, employee.id, 'office', $event.target.value)"
+                                                min="0" 
+                                                max="24" 
+                                                step="0.5"
+                                                placeholder="0"
+                                            >
+                                        </div>
+                                        <div class="hour-column massage">
+                                            <input 
+                                                type="number" 
+                                                class="hour-input" 
+                                                :value="getHours(date.dateString, employee.id, 'massage')"
+                                                @input="updateHours(date.dateString, employee.id, 'massage', $event.target.value)"
+                                                min="0" 
+                                                max="24" 
+                                                step="0.5"
+                                                placeholder="0"
+                                            >
+                                        </div>
+                                        <div class="hour-column sick">
+                                            <input 
+                                                type="number" 
+                                                class="hour-input" 
+                                                :value="getHours(date.dateString, employee.id, 'sick')"
+                                                @input="updateHours(date.dateString, employee.id, 'sick', $event.target.value)"
+                                                min="0" 
+                                                max="24" 
+                                                step="0.5"
+                                                placeholder="0"
+                                            >
+                                        </div>
+                                        <div class="hour-column holiday">
+                                            <input 
+                                                type="number" 
+                                                class="hour-input" 
+                                                :value="getHours(date.dateString, employee.id, 'holiday')"
+                                                @input="updateHours(date.dateString, employee.id, 'holiday', $event.target.value)"
+                                                min="0" 
+                                                max="24" 
+                                                step="0.5"
+                                                placeholder="0"
+                                            >
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="filler-cell"></td>
+                            </tr>
+                        </tbody>
+                        <!-- Remove employee row -->
+                        <tfoot v-if="employees.length > 0">
+                            <tr class="remove-employee-row">
+                                <td class="date-cell remove-label">
+                                    <div class="remove-label-text">Remove Employee:</div>
+                                    <div class="remove-label-subtitle">Deletes all {{ monthTitle }} entries</div>
+                                </td>
+                                <td v-for="employee in employees" :key="'remove-' + employee.id" class="schedule-cell remove-cell">
+                                    <button 
+                                        class="btn btn-danger btn-sm remove-employee-btn" 
+                                        @click="confirmRemoveEmployee(employee)"
+                                        :title="'Remove ' + employee.name + ' from ' + monthTitle"
+                                    >
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                        Remove
+                                    </button>
+                                </td>
+                                <td class="filler-cell"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Add Employee Modal -->
+                <div v-if="showModal" class="modal-backdrop" @click="closeModal">
+                    <div class="modal-dialog" @click.stop>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Employee Schedule for {{ monthTitle }}</h4>
+                                <button type="button" class="close" @click="closeModal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form @submit.prevent="addEmployeeSchedule">
+                                    <div class="form-group">
+                                        <label for="employeeSelect">Select Employee:</label>
+                                        <select 
+                                            id="employeeSelect" 
+                                            class="form-control" 
+                                            v-model="newEmployee.selectedId"
+                                            @change="onEmployeeSelected"
+                                        >
+                                            <option value="">-- Select from existing employees --</option>
+                                            <option v-for="emp in availableEmployees" :key="emp.id" :value="emp.id">
+                                                {{ emp.name }} (ID: {{ emp.id }})
+                                            </option>
+                                            <option value="new">+ Add New Employee</option>
+                                        </select>
+                                    </div>
+                                    <div v-if="newEmployee.selectedId === 'new'" class="form-group">
+                                        <label for="employeeName">Employee Name:</label>
+                                        <input 
+                                            type="text" 
+                                            id="employeeName" 
+                                            class="form-control" 
+                                            v-model="newEmployee.name" 
+                                            placeholder="Enter new employee name"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="employeeId">Employee ID (optional):</label>
+                                        <input 
+                                            type="number" 
+                                            id="employeeId" 
+                                            class="form-control" 
+                                            v-model="newEmployee.id" 
+                                            placeholder="Auto-generated if empty"
+                                        >
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <small>
+                                            <strong>Note:</strong> This will create an initial schedule entry for the 1st of {{ monthTitle }} 
+                                            with zero hours, making this employee visible in the schedule table.
+                                        </small>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" @click="closeModal">Cancel</button>
+                                <button type="button" class="btn btn-success" @click="addEmployeeSchedule" :disabled="!canAddEmployee">Add Employee</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remove Employee Confirmation Modal -->
+                <div v-if="showRemoveModal" class="modal-backdrop" @click="closeRemoveModal">
+                    <div class="modal-dialog" @click.stop>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Remove Employee Schedule</h4>
+                                <button type="button" class="close" @click="closeRemoveModal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-warning">
+                                    <strong>Warning:</strong> This action cannot be undone.
+                                </div>
+                                <p>Are you sure you want to remove <strong>{{ employeeToRemove?.name }}</strong> from <strong>{{ monthTitle }}</strong>?</p>
+                                <p>This will delete all schedule entries for this employee in the selected month.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" @click="closeRemoveModal">Cancel</button>
+                                <button type="button" class="btn btn-danger" @click="removeEmployee">
+                                    <span class="glyphicon glyphicon-trash"></span> Remove Employee
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty state when no employees have schedules for this month -->
+                <div v-if="employees.length === 0" class="empty-state">
+                    <div class="empty-state-content">
+                        <span class="glyphicon glyphicon-user empty-state-icon"></span>
+                        <h3>No Employee Schedules for {{ monthTitle }}</h3>
+                        <p>Get started by adding the first employee schedule for this month.</p>
+                        <button class="btn btn-success btn-lg" @click="showAddEmployeeModal">
+                            <span class="glyphicon glyphicon-plus"></span> Add Employee Schedule
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <script>
+        // Mock Grist API for demo
+        window.grist = {
+            mapColumnNames: (record) => record,
+            ready: () => {},
+            onRecords: () => {},
+            onRecord: () => {},
+            onOptions: () => {}
+        };
+    </script>
+    <script src="demo.js"></script>
+</body>
+</html>

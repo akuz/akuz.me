@@ -1,0 +1,22 @@
+{
+  "name": "@gristlabs/widget-employee-schedule",
+  "description": "Employee schedule widget showing office hours, sick hours, and massage hours in a monthly calendar format",
+  "homePage": "https://github.com/gristlabs/grist-widget",
+  "version": "0.0.1",
+  "grist": {
+    "name": "Employee Schedule",
+    "url": "https://gristlabs.github.io/grist-widget/employee-schedule/index.html",
+    "widgetId": "@gristlabs/widget-employee-schedule",
+    "published": true,
+    "accessLevel": "full",
+    "renderAfterReady": true,
+    "description": "Display employee schedules in a monthly calendar format showing office hours, sick hours, and massage hours for each employee across all working days of the month.",
+    "authors": [
+      {
+        "name": "Grist Labs",
+        "url": "https://github.com/gristlabs"
+      }
+    ],
+    "isGristLabsMaintained": true
+  }
+}
