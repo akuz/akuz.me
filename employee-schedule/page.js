@@ -549,7 +549,7 @@ ready(function() {
     const { firstDay, lastDay } = getMonthDateRange(app.currentDate.getFullYear(), app.currentDate.getMonth());
 
     grist.ready({
-      requiredAccess: 'read_table',
+      requiredAccess: 'full',
       columns: columnOptions,
       allowSelectBy: true
     });
